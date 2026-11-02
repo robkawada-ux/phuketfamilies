@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.env*.local
+.DS_Store
+*.log
+tsconfig.tsbuildinfo
+
+# Local scratch from Claude sessions
+Claude outputs/
