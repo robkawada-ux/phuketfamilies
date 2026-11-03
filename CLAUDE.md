@@ -11,7 +11,7 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 ## Domain & deployment
 - Domain phuketfamilies.com bought Nov 2026. Canonical host is `www.phuketfamilies.com`, set once in `SITE` in `src/lib/seo.ts` (sitemap, robots, canonicals and JSON-LD all read it).
 - TODO: create the Vercel project, point DNS, set up a GA4 property and a Search Console property (verification goes in `layout.tsx` as `metadata.verification.google`). The bkkfamilies GA and GSC tokens were deliberately removed.
-- Contact email is the `CONTACT_EMAIL` constant in `src/lib/seo.ts`, currently info@bkkfamilies.com until a phuketfamilies inbox exists.
+- Contact email is the `CONTACT_EMAIL` constant in `src/lib/seo.ts`: info@phuketfamilies.com, a Namecheap email forwarder to robkawada@gmail.com (set up 3 Nov 2026, no catch-all on purpose).
 
 ## Brand
 - Name Phuket Families, tagline "YOUR PHUKET ROADMAP" (always caps and bold), same layout and cartoon road theme as BKK Families.

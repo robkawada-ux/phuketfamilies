@@ -7,7 +7,7 @@ export const SITE_NAME = "Phuket Families";
 export const SISTER_SITE = { name: "BKK Families", city: "Bangkok", url: "https://www.bkkfamilies.com" };
 
 /** Public contact inbox. Change here only. */
-export const CONTACT_EMAIL = "info@bkkfamilies.com";
+export const CONTACT_EMAIL = "info@phuketfamilies.com";
 
 /**
  * Build a complete openGraph block for a page.
