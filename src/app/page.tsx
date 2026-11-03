@@ -142,13 +142,13 @@ export default function HomePage() {
                   and budget.
                 </p>
               </Link>
-              <Link
-                href="/blog"
+<Link
+                href="/healthcare"
                 className="rounded-xl bg-green p-6 text-white transition hover:opacity-90"
               >
-                <h3 className="font-heading text-xl font-bold">Guides</h3>
+                <h3 className="font-heading text-xl font-bold">Healthcare</h3>
                 <p className="mt-1 text-sm text-white/90">
-                  Practical guides for families living in Phuket.
+                  Hospitals, children&apos;s clinics, delivery prices and dentists.
                 </p>
               </Link>
               <a
@@ -161,12 +161,12 @@ export default function HomePage() {
                 </p>
               </a>
               <Link
-                href="/contact#advertise"
+                href="/blog"
                 className="rounded-xl bg-orange p-6 text-white transition hover:opacity-90"
               >
-                <h3 className="font-heading text-xl font-bold">Advertise</h3>
+                <h3 className="font-heading text-xl font-bold">Guides</h3>
                 <p className="mt-1 text-sm text-white/90">
-                  Reach families in Phuket and Bangkok.
+                  Practical guides for families living in Phuket.
                 </p>
               </Link>
             </div>

@@ -34,6 +34,10 @@ export const CONTACT_EMAIL = "info@bkkfamilies.com";
  * folder and list it here, or its pages will share with the homepage card.
  */
 const SECTION_CARDS = [
+  "/healthcare/hospitals",
+  "/healthcare/maternity",
+  "/healthcare/paediatrics",
+  "/healthcare",
   "/schools",
   "/blog",
 ];

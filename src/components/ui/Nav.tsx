@@ -12,7 +12,7 @@ type NavLink = {
    * Full literal class strings so Tailwind's scanner picks them up.
    * `mobile` colours the two-column menu below lg, arranged as a
    * checkerboard so no two neighbouring blocks share a colour.
-   * `desktop` colours the single six-column bar from lg up.
+   * `desktop` colours the single seven-column bar from lg up.
    */
   mobile: string;
   desktop: string;
@@ -26,8 +26,9 @@ type NavLink = {
 const LINKS: NavLink[] = [
   { href: "/", label: "Home", mobile: "bg-orange text-white", desktop: "lg:bg-orange lg:text-white", hover: "hover:brightness-105", bar: "bg-purple-dark" },
   { href: "/schools", label: "Schools", mobile: "bg-teal text-purple-dark", desktop: "lg:bg-teal lg:text-purple-dark", hover: "hover:brightness-105", bar: "bg-purple-dark" },
-  { href: "/blog", label: "Guides", mobile: "bg-purple text-white", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-white lg:bg-purple-dark" },
-  { href: "/contact", label: "Contact", mobile: "bg-green text-purple-dark", desktop: "lg:bg-purple lg:text-white", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
+  { href: "/healthcare", label: "Healthcare", mobile: "bg-green text-purple-dark", desktop: "lg:bg-purple lg:text-white", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
+  { href: "/blog", label: "Guides", mobile: "bg-orange text-white", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-white lg:bg-purple-dark" },
+  { href: "/contact", label: "Contact", mobile: "bg-teal text-purple-dark", desktop: "lg:bg-teal lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
   { href: "/contact#advertise", label: "Advertise With Us", mobile: "bg-purple-dark text-white", desktop: "lg:bg-purple-dark lg:text-white", hover: "hover:brightness-150", bar: "bg-white" },
   { href: "https://www.bkkfamilies.com", label: "Bangkok ↗", mobile: "bg-sand text-purple-dark", desktop: "lg:bg-sand lg:text-purple-dark", hover: "hover:brightness-95", bar: "bg-purple-dark", external: true },
 ];
@@ -79,7 +80,7 @@ export default function Nav() {
       <nav
         id="main-nav"
         aria-label="Main"
-        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-6`}
+        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-7`}
       >
         {LINKS.map((l) => {
           const active = !l.external && isActive(l.href);

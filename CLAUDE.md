@@ -24,8 +24,8 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Cards are 1200x630, deep teal with the road and palm. Articles without a hero image use `public/images/og/blog-default.png`.
 
 ## Site architecture
-- Live sections: home, /schools (directory + detail pages), /blog (titled "Guides", empty at launch), /contact (incl. #advertise).
-- Removed from the Bangkok copy, to be rebuilt with Phuket data later: activities, camps, playgroups, learning support, healthcare (hospitals, maternity, paediatrics, insurance) and school breaks. `schoolBreaks.ts` and `schoolFees.ts` are kept with empty data because the school pages use their types and helpers.
+- Live sections: home, /schools (directory + detail pages), /healthcare (hub, /hospitals directory + detail pages, /maternity, /paediatrics), /blog (titled "Guides", empty at launch), /contact (incl. #advertise).
+- Removed from the Bangkok copy, to be rebuilt with Phuket data later: activities, camps, playgroups, learning support, health insurance and school breaks. `schoolBreaks.ts` and `schoolFees.ts` are kept with empty data because the school pages use their types and helpers.
 - Articles are TypeScript objects in `src/lib/articles.ts` (see the Article interface). Body paragraphs support `[label](/path)` links and `**bold**` via RichText. Byline renders as "by Phuket Families".
 - Plan: cross-link articles between phuketfamilies.com and bkkfamilies.com where it genuinely helps the reader (a few links per article, editorial, not a link scheme).
 
@@ -38,3 +38,10 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 
 ## Tools
 - `scripts/linkcheck.sh` checks external school website URLs (written for bkkfamilies; use parallelism 4).
+
+## Healthcare directory (added 2 Nov 2026)
+- Rebuilt from the bkkfamilies healthcare code with Phuket data: 12 facilities in `src/lib/healthcare.ts` (Bangkok Hospital Phuket, Bangkok Hospital Siriroj, Mission Hospital Phuket, Dibuk, Vachira, Patong Hospital, four Bangkok Phuket Clinic branches, two dental practices). Research notes in the claude.ai project doc `claude/phuket-healthcare.md`.
+- Same honesty rules as Bangkok: every figure from the provider's own page where possible, `pricing: "unverified"` when we have not found a published price, and unverified services left out of the tags rather than guessed.
+- Only Bangkok Hospital Phuket publishes a delivery price (67,000 to 166,000 baht, non-Thai mothers only). Mission Hospital delivery prices found online are Mission Hospital BANGKOK's, not Phuket's.
+- No Phuket hospital we checked advertises a separate children's ER, so `separateChildrensEr` is left unset rather than false. The paediatrics page is built around children's clinic hours instead.
+- Gaps: no verified standalone mental health or developmental provider yet, Vachira's family services unverified, NICU levels unconfirmed.
