@@ -151,15 +151,15 @@ export default function HomePage() {
                   Hospitals, children&apos;s clinics, delivery prices and dentists.
                 </p>
               </Link>
-              <a
-                href={SISTER_SITE.url}
+              <Link
+                href="/camps"
                 className="rounded-xl bg-purple p-6 text-white transition hover:opacity-90"
               >
-                <h3 className="font-heading text-xl font-bold">Bangkok</h3>
+                <h3 className="font-heading text-xl font-bold">Camps</h3>
                 <p className="mt-1 text-sm text-white/90">
-                  Schools, healthcare and camps in Bangkok on {SISTER_SITE.name}.
+                  Holiday camps for Christmas, half term, Songkran and summer.
                 </p>
-              </a>
+              </Link>
               <Link
                 href="/blog"
                 className="rounded-xl bg-orange p-6 text-white transition hover:opacity-90"

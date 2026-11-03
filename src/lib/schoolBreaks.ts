@@ -51,66 +51,57 @@ export interface BreakWindow {
   summary: string;
 }
 
+// Phuket windows are drawn from when Phuket camps actually run in
+// 2026/27, read off the operators' own published schedules. We do not
+// yet hold verified Phuket school calendars, so no summary below names a
+// school's term dates. Add them here once read from each school's calendar.
 export const BREAK_WINDOWS: BreakWindow[] = [
   {
-    id: "oct-2026",
-    label: "October half term 2026",
-    shortLabel: "Oct 2026",
-    start: "2026-10-12",
-    end: "2026-10-25",
-    coreStart: "2026-10-12",
-    coreEnd: "2026-10-16",
-    summary:
-      "Two separate weeks, not one. Patana and St Andrews take 12 to 16 October. King's takes 17 to 25 October. Camp supply is heaviest in the first week.",
-  },
-  {
     id: "winter-2026",
-    label: "Winter and New Year 2026/27",
-    shortLabel: "Winter 2026",
+    label: "Christmas and New Year 2026/27",
+    shortLabel: "Christmas 2026",
     start: "2026-12-14",
-    end: "2027-01-11",
+    end: "2027-01-08",
     coreStart: "2026-12-21",
     coreEnd: "2027-01-01",
     summary:
-      "The most staggered break of the year. St Andrews is out from 14 December, Patana not until 19 December. St Andrews returns 5 January, Shrewsbury not until 12 January. Nearly a month of rolling demand.",
+      "The busiest camp season after summer. Phuket camps run from 14 December, and the longest runs straight through to 8 January. Many families travel at this time, so book early if you are staying on the island.",
   },
   {
     id: "spring-2027",
-    label: "Spring half term 2027",
-    shortLabel: "Spring 2027",
-    start: "2027-02-15",
-    end: "2027-03-26",
+    label: "February half term 2027",
+    shortLabel: "February 2027",
+    start: "2027-02-08",
+    end: "2027-02-19",
     summary:
-      "There is no single spring break. St Andrews takes mid February, King's takes late February, Patana takes late March around Easter. Check your own school's dates before booking anything labelled February half term.",
+      "Most February camps on the island run 15 to 19 February. Thanyapura also runs the week before, 8 to 12 February, which covers Chinese New Year. Check your own school's half term before booking.",
+  },
+  {
+    id: "other-2027",
+    label: "January to March 2027, for visiting families",
+    shortLabel: "Jan to Mar 2027",
+    start: "2027-01-11",
+    end: "2027-03-05",
+    summary:
+      "Phuket's high season brings visiting families on long stays, and a few camps run weekly through term time for them. Useful if your child is not in school here.",
   },
   {
     id: "songkran-2027",
-    label: "Songkran break 2027",
+    label: "Easter and Songkran 2027",
     shortLabel: "Songkran 2027",
-    start: "2027-04-03",
-    end: "2027-04-18",
-    coreStart: "2027-04-05",
-    coreEnd: "2027-04-16",
+    start: "2027-04-05",
+    end: "2027-04-16",
     summary:
-      "The most aligned break after October. Most schools take the full two weeks, 5 to 16 April, with Songkran itself on 13 to 15 April. Very few camps run during the festival days themselves.",
+      "Phuket camps run between 5 and 16 April, with Songkran itself on 13 to 15 April. Easter 2027 falls on 28 March, so check whether your school's break follows Easter or Songkran.",
   },
   {
     id: "summer-2027",
     label: "Summer 2027",
     shortLabel: "Summer 2027",
-    start: "2027-06-23",
-    end: "2027-08-20",
+    start: "2027-06-21",
+    end: "2027-08-13",
     summary:
-      "Finish dates spread across three weeks, from 22 June at St Andrews to 2 July at King's, and American calendar schools finish earlier still. Eight weeks of camp demand, and the only window where residential and overseas programmes are realistic.",
-  },
-  {
-    id: "other-2027",
-    label: "Other term time breaks 2027",
-    shortLabel: "Other 2027",
-    start: "2027-05-01",
-    end: "2027-06-06",
-    summary:
-      "A few schools take short breaks inside Term 3. King's takes 1 to 4 May and 3 to 6 June. Almost no camps are scheduled against these, since demand is too thin.",
+      "The main camp season, roughly late June to mid August. Most operators publish summer dates between February and April, often with early bird prices, so many listings below still show the dates they ran in 2026.",
   },
 ];
 

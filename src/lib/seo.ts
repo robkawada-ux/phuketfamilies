@@ -39,6 +39,7 @@ const SECTION_CARDS = [
   "/healthcare/paediatrics",
   "/healthcare",
   "/schools",
+  "/camps",
   "/blog",
 ];
 

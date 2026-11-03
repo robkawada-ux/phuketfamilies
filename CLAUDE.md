@@ -27,12 +27,12 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Articles take `heroImage` plus `heroAlt`. The share image prefers the generated card in `OG_CARDS` (it carries the headline) over the hero photo.
 
 ## Share images (Facebook previews), required on every page
-- Same rule as bkkfamilies: every page must emit an og:image. `og()` in `src/lib/seo.ts` attaches the nearest section card (`SECTION_CARDS`: the healthcare pages, /schools, /blog), falling back to the homepage card.
+- Same rule as bkkfamilies: every page must emit an og:image. `og()` in `src/lib/seo.ts` attaches the nearest section card (`SECTION_CARDS`: the healthcare pages, /schools, /camps, /blog), falling back to the homepage card.
 - Cards are 1200x630, deep teal with the road and palm. Articles without a hero image use `public/images/og/blog-default.png`.
 
 ## Site architecture
-- Live sections: home, /schools (directory + detail pages), /healthcare (hub, /hospitals directory + detail pages, /maternity, /paediatrics), /blog (titled "Guides"), /contact (incl. #advertise).
-- Removed from the Bangkok copy, to be rebuilt with Phuket data later: activities, camps, playgroups, learning support, health insurance and school breaks. `schoolBreaks.ts` and `schoolFees.ts` are kept with empty data because the school pages use their types and helpers.
+- Live sections: home, /schools (directory + detail pages), /healthcare (hub, /hospitals directory + detail pages, /maternity, /paediatrics), /camps (directory + detail pages), /blog (titled "Guides"), /contact (incl. #advertise).
+- Removed from the Bangkok copy, to be rebuilt with Phuket data later: activities, playgroups, learning support, health insurance and school breaks. `schoolFees.ts` is kept with empty data because the school pages use its types and helpers. `schoolBreaks.ts` has no school calendars yet, but its `BREAK_WINDOWS` now hold the Phuket camp seasons.
 - Published guides (3 Nov 2026): `phuket-international-school-fees` (18 schools compared) and `phuket-hospitals-for-families`. Each has a share card in `public/images/og/blog/<slug>.png` registered in `OG_CARDS` in `src/app/blog/[slug]/page.tsx`. Update both articles when school fees or facility details change.
 - Articles are TypeScript objects in `src/lib/articles.ts` (see the Article interface). Body paragraphs support `[label](/path)` links and `**bold**` via RichText. Byline renders as "by Phuket Families".
 - Plan: cross-link articles between phuketfamilies.com and bkkfamilies.com where it genuinely helps the reader (a few links per article, editorial, not a link scheme).
@@ -53,3 +53,9 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Only Bangkok Hospital Phuket publishes a delivery price (67,000 to 166,000 baht, non-Thai mothers only). Mission Hospital delivery prices found online are Mission Hospital BANGKOK's, not Phuket's.
 - No Phuket hospital we checked advertises a separate children's ER, so `separateChildrensEr` is left unset rather than false. The paediatrics page is built around children's clinic hours instead.
 - Gaps: no verified standalone mental health or developmental provider yet, Vachira's family services unverified, NICU levels unconfirmed.
+
+## Camps directory (added 3 Nov 2026)
+- 12 operators, 45 camp weeks in `src/lib/camps.ts` (same model as bkkfamilies: one Camp per operator, sessions with `window`, `dateStatus` confirmed / tba / ran-previously, prices only when published, 90-day stale warning). Research notes and skipped operators are in the claude.ai project doc `claude/phuket-camps.md`.
+- Camp seasons are the `BREAK_WINDOWS` in `schoolBreaks.ts`, taken from operators' published schedules (no Phuket school calendars found): Christmas 2026/27, February half term, Jan to March for visiting families, Easter and Songkran, summer 2027.
+- Confirmed 2026/27 dates so far: Bamboo Valley (whole year), Thanyapura Future Stars, ISP. The rest show their 2026 run and need re-checking when summer 2027 dates come out (usually Feb to April).
+- Ivy Camps USA has no website link: ivycampsusa.com/thailand-summer-camps could not be loaded to confirm it.
