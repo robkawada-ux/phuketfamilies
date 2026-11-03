@@ -7,13 +7,13 @@ import { SITE } from "@/lib/seo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/schools" },
-  title: "International Schools in Bangkok",
+  title: "International Schools in Phuket",
   description:
-    `Browse ${SCHOOLS.length} international schools in Bangkok by location, curriculum and budget, with fees read from each school's own 2026/27 schedule where it publishes one.`,
+    `Compare all ${SCHOOLS.length} international schools in Phuket by area, curriculum and budget, with 2026/27 fees where schools publish them.`,
   openGraph: og({
-    title: "International Schools in Bangkok",
+    title: "International Schools in Phuket",
     description:
-      `Browse ${SCHOOLS.length} international schools in Bangkok by location, curriculum and budget, with fees read from each school's own 2026/27 schedule where it publishes one.`,
+      `Compare all ${SCHOOLS.length} international schools in Phuket by area, curriculum and budget, with 2026/27 fees where schools publish them.`,
     path: "/schools",
   }),
 };
@@ -50,8 +50,8 @@ export default function SchoolsPage() {
       />
       <PageHero
         eyebrow="Find the right fit"
-        title="International Schools in Bangkok"
-        subtitle="Searching for schools in Bangkok is daunting. Filter by location, curriculum and budget to narrow it down fast."
+        title="International Schools in Phuket"
+        subtitle="From Thalang in the north to Rawai in the south. Filter by area, curriculum and budget to narrow it down fast."
         color="teal"
       />
       <div className="mx-auto max-w-6xl px-4 py-12">

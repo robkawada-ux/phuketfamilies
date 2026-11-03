@@ -41,7 +41,7 @@ export async function generateMetadata({
     ? firstPara.length <= 158
       ? firstPara
       : firstPara.slice(0, firstPara.lastIndexOf(" ", 155)) + "..."
-    : `${school.name} international school in Bangkok. Curriculum: ${school.curricula.join(", ")}.`;
+    : `${school.name} international school in Phuket. Curriculum: ${school.curricula.join(", ")}.`;
 
   // Lead with the facts people search for: fees and term dates.
   const summary = feeSummary(school.slug);
@@ -59,7 +59,7 @@ export async function generateMetadata({
   const pageTitle = topic ? `${school.name}: ${topic}` : school.name;
   // Keep the whole title near 65 characters; drop the brand suffix if needed.
   const title =
-    `${pageTitle} | BKK Families`.length > 66 ? { absolute: pageTitle } : pageTitle;
+    `${pageTitle} | Phuket Families`.length > 66 ? { absolute: pageTitle } : pageTitle;
 
   let description = fallback;
   if (summary) {
@@ -82,7 +82,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `https://www.bkkfamilies.com/schools/${school.slug}`,
+      canonical: `${SITE}/schools/${school.slug}`,
     },
     openGraph: {
       ...og({
@@ -144,7 +144,7 @@ export default async function SchoolPage({
       mainEntity: {
         "@type": "School",
         name: school.name,
-        areaServed: "Bangkok, Thailand",
+        areaServed: "Phuket, Thailand",
         ...(firstPara ? { description: firstPara } : {}),
         ...(school.website ? { url: school.website } : {}),
         ...(school.photo ? { image: `${SITE}${school.photo}` } : {}),
@@ -277,8 +277,8 @@ export default async function SchoolPage({
                 {school.feeRange}
               </p>
               <p className="mt-0.5 text-xs text-neutral-500">
-                Indicative, from third-party data. Not yet checked against
-                the school&apos;s own schedule, so confirm with the school.
+                Published 2026/27 range, lowest to highest year group. Fees
+                change every year, so confirm with the school before you budget.
               </p>
             </>
           ) : (
@@ -307,18 +307,12 @@ export default async function SchoolPage({
         <div className="mt-8 rounded-xl border border-black/5 bg-neutral-50 p-6 text-sm text-neutral-500">
           <p>
             We do not yet have a detailed write-up for this school. In the
-            meantime, we recommend reaching out directly or asking in the
-            Bangkok Expat Families group below, where many parents have
-            first-hand experience.
+            meantime, we recommend contacting the school directly. Know this
+            school well? Tell us what families should know.
           </p>
-          <a
-            href="https://www.facebook.com/groups/395501457186828"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-3 inline-block font-semibold text-orange"
-          >
-            Ask in Bangkok Expat Families
-          </a>
+          <Link href="/contact" className="mt-3 inline-block font-semibold text-orange">
+            Send us an update
+          </Link>
         </div>
       )}
 
@@ -332,18 +326,18 @@ export default async function SchoolPage({
         </p>
         <ul className="mt-2 grid gap-2 text-sm sm:grid-cols-3">
           <li>
-            <Link href={calendar?.schoolSlug ? `/school-breaks#${calendar.schoolSlug}` : "/school-breaks"} className="font-semibold text-orange">
-              School holidays 2026/27 →
+            <Link href="/schools" className="font-semibold text-orange">
+              Compare all Phuket schools →
             </Link>
           </li>
           <li>
-            <Link href="/blog/what-does-international-school-actually-cost-bangkok-2026" className="font-semibold text-orange">
-              What school really costs →
-            </Link>
+            <a href="https://www.bkkfamilies.com/schools" className="font-semibold text-orange">
+              Bangkok schools on BKK Families →
+            </a>
           </li>
           <li>
-            <Link href="/camps" className="font-semibold text-orange">
-              Holiday camps →
+            <Link href="/contact" className="font-semibold text-orange">
+              Update this listing →
             </Link>
           </li>
         </ul>
@@ -518,10 +512,7 @@ function FeeTable({ fees, schoolName }: { fees: SchoolFees; schoolName: string }
         ) : (
           fees.sourceUrl ?? "the school"
         )}
-        . Fees change every year, so confirm with the school before you budget.{" "}
-        <Link href="/blog/what-does-international-school-actually-cost-bangkok-2026" className="font-semibold text-orange">
-          What international school really costs in Bangkok
-        </Link>
+        . Fees change every year, so confirm with the school before you budget.
       </p>
     </section>
   );

@@ -67,14 +67,14 @@ export default function SchoolDirectory() {
         </div>
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-neutral-500">
-            Location
+            Area
           </label>
           <select
             value={area}
             onChange={(e) => setArea(e.target.value as "All" | Area)}
             className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-orange focus:outline-none"
           >
-            <option value="All">All locations</option>
+            <option value="All">All areas</option>
             {AREAS.map((a) => (
               <option key={a.id} value={a.id}>
                 {a.label}

@@ -1,4 +1,4 @@
-// Paid banner placements on bkkfamilies.com.
+// Paid banner placements on phuketfamilies.com.
 //
 // To book a slot: put the artwork in public/images/ads/, fill in the slot
 // below with the sponsor's details and dates, commit and push. The homepage
@@ -64,24 +64,24 @@ export const HOUSE_PROMOS: Record<
   { eyebrow: string; title: string; text: string; href: string; color: "teal" | "green" | "orange" }
 > = {
   "home-sidebar-top": {
-    eyebrow: "School holidays",
-    title: "Every school's 2026/27 break dates",
-    text: "Term dates read off each school's own calendar, so you know which week your child is off.",
-    href: "/school-breaks",
+    eyebrow: "Schools",
+    title: "Every international school in Phuket",
+    text: "Compared by area, curriculum and budget, with fees where schools publish them.",
+    href: "/schools",
     color: "teal",
   },
   "home-sidebar-middle": {
-    eyebrow: "Holiday camps",
-    title: "Camps with real dates and prices",
-    text: "Filter by the week your child is actually off school.",
-    href: "/camps",
+    eyebrow: "Bangkok",
+    title: "Moving between Bangkok and Phuket?",
+    text: "Our sister site BKK Families covers schools, healthcare and camps in Bangkok.",
+    href: "https://www.bkkfamilies.com",
     color: "green",
   },
   "home-sidebar-bottom": {
-    eyebrow: "Health insurance",
-    title: "Family health insurance in Thailand",
-    text: "Every option, real 2026 prices and honest reviews. No review is ever paid for.",
-    href: "/healthcare/insurance",
+    eyebrow: "Advertise",
+    title: "Reach families in Phuket",
+    text: "Banners on this site, always clearly labelled.",
+    href: "/contact#advertise",
     color: "orange",
   },
 };

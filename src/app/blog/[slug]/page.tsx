@@ -1,9 +1,9 @@
+import { SITE, SITE_NAME } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ARTICLES, getArticle } from "@/lib/articles";
 import { SCHOOLS } from "@/lib/schools";
-import { FACILITIES } from "@/lib/healthcare";
 import RichText, { stripRichText } from "@/components/ui/RichText";
 
 /**
@@ -19,18 +19,7 @@ import RichText, { stripRichText } from "@/components/ui/RichText";
  * REGENERATING ITS CARD. Three cards here were left showing old titles after
  * a round of rewrites before anyone noticed.
  */
-const OG_CARDS = new Set([
-  "third-culture-kids-bangkok-moving-back",
-  "is-bangkok-safe-for-kids",
-  "top-5-hospitals-in-bangkok",
-  "staying-fit-in-bangkok",
-  "dental-health-for-families-in-bangkok",
-  "top-museums-for-kids-in-bangkok",
-  "having-a-baby-in-bangkok",
-  "bangkok-smog-season-kids",
-  "pharmacies-in-thailand-guide",
-  "heatstroke-thailand-hot-season",
-]);
+const OG_CARDS = new Set<string>([]);
 
 /** Hero photo if there is one, else a generated card, else the blog default. */
 function shareImage(slug: string, heroImage?: string) {
@@ -53,7 +42,7 @@ export async function generateMetadata({
   if (!article) return {};
 
   const description = article.metaDescription ?? article.excerpt;
-  const url = "https://www.bkkfamilies.com/blog/" + article.slug;
+  const url = SITE + "/blog/" + article.slug;
   const image = shareImage(article.slug, article.heroImage);
 
   return {
@@ -89,7 +78,7 @@ export default async function ArticlePage({
   const article = getArticle(slug);
   if (!article) return notFound();
 
-  const url = "https://www.bkkfamilies.com/blog/" + article.slug;
+  const url = SITE + "/blog/" + article.slug;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -99,16 +88,16 @@ export default async function ArticlePage({
     datePublished: article.date,
     dateModified: article.updated ?? article.date,
     image:
-      "https://www.bkkfamilies.com" +
+      SITE +
       shareImage(article.slug, article.heroImage),
     author: {
       "@type": "Organization",
-      name: "BKK Families",
+      name: SITE_NAME,
       url: "https://www.bkkfamilies.com",
     },
     publisher: {
       "@type": "Organization",
-      name: "BKK Families",
+      name: SITE_NAME,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -120,8 +109,8 @@ export default async function ArticlePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bkkfamilies.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.bkkfamilies.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Blog", item: SITE + "/blog" },
       { "@type": "ListItem", position: 3, name: article.title, item: url },
     ],
   };
@@ -189,7 +178,7 @@ export default async function ArticlePage({
             })}
           </>
         )}{" "}
-        · by BKK Families
+        · by Phuket Families
       </p>
 
       {article.sponsored && (
@@ -267,32 +256,6 @@ export default async function ArticlePage({
             className="mt-4 inline-block text-sm font-semibold text-teal hover:underline"
           >
             Browse all {SCHOOLS.length} schools in our directory →
-          </Link>
-        </div>
-      )}
-
-      {article.relatedFacilities && article.relatedFacilities.length > 0 && (
-        <div className="mt-10 rounded-xl border border-black/5 bg-teal-50 p-6">
-          <h2 className="font-heading text-lg font-bold text-purple-dark">
-            Places mentioned in this guide
-          </h2>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            {article.relatedFacilities.map((f) => (
-              <li key={f.slug}>
-                <Link
-                  href={"/healthcare/hospitals/" + f.slug}
-                  className="text-sm font-semibold text-orange hover:underline"
-                >
-                  {f.name} →
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/healthcare/hospitals"
-            className="mt-4 inline-block text-sm font-semibold text-teal hover:underline"
-          >
-            Browse all {FACILITIES.length} hospitals, clinics and dentists →
           </Link>
         </div>
       )}

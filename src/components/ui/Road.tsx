@@ -1,5 +1,5 @@
 /**
- * Cartoon roads for the "Your Bangkok Roadmap" theme.
+ * Cartoon roads for the "Your Phuket Roadmap" theme.
  *
  * A road is an SVG path drawn as a thick black stroke with a dashed white
  * centre line. Paths are written in a 1000-unit-wide viewBox that stretches

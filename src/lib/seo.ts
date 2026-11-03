@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 
-export const SITE = "https://www.bkkfamilies.com";
-export const SITE_NAME = "BKK Families";
+export const SITE = "https://www.phuketfamilies.com";
+export const SITE_NAME = "Phuket Families";
+
+/** Sister site, linked from the footer and from articles where it helps the reader. */
+export const SISTER_SITE = { name: "BKK Families", city: "Bangkok", url: "https://www.bkkfamilies.com" };
+
+/** Public contact inbox. Change here only. */
+export const CONTACT_EMAIL = "info@bkkfamilies.com";
 
 /**
  * Build a complete openGraph block for a page.
@@ -18,7 +24,7 @@ export const SITE_NAME = "BKK Families";
  *
  * WHY: a page that sets openGraph (every page, via og() below) does NOT
  * inherit a parent folder's opengraph-image file, so detail pages such as
- * /playgroups/<slug> or /schools/<slug> were sharing to Facebook with no
+ * /schools/<slug> were sharing to Facebook with no
  * picture at all. og() now always attaches the nearest section card, and
  * falls back to the homepage card. A section folder that has its own
  * opengraph-image.png still wins, because Next gives file-based images
@@ -28,17 +34,7 @@ export const SITE_NAME = "BKK Families";
  * folder and list it here, or its pages will share with the homepage card.
  */
 const SECTION_CARDS = [
-  "/healthcare/hospitals",
-  "/healthcare/insurance",
-  "/healthcare/maternity",
-  "/healthcare/paediatrics",
-  "/healthcare",
-  "/learning-support",
-  "/school-breaks",
-  "/playgroups",
-  "/activities",
   "/schools",
-  "/camps",
   "/blog",
 ];
 

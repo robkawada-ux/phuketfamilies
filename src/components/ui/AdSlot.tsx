@@ -45,7 +45,7 @@ export function TopBanner() {
           Advertise here
         </p>
         <p className="mt-1 font-heading text-lg font-bold text-purple-dark">
-          Put your business in front of every family who visits BKK Families.
+          Put your business in front of every family who visits Phuket Families.
         </p>
         <p className="mt-0.5 text-sm text-neutral-600">
           The homepage top banner is sold to one advertiser at a time, never rotated.

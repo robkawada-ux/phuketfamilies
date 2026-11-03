@@ -12,26 +12,24 @@ type NavLink = {
    * Full literal class strings so Tailwind's scanner picks them up.
    * `mobile` colours the two-column menu below lg, arranged as a
    * checkerboard so no two neighbouring blocks share a colour.
-   * `desktop` colours the single ten-column bar from lg up.
+   * `desktop` colours the single six-column bar from lg up.
    */
   mobile: string;
   desktop: string;
   hover: string;
   /** Colour of the active-page underline */
   bar: string;
+  /** Sister-site link: opens the other site, never marked active. */
+  external?: boolean;
 };
 
 const LINKS: NavLink[] = [
-  { href: "/", label: "Home", mobile: "bg-orange text-purple-dark", desktop: "lg:bg-orange lg:text-purple-dark", hover: "hover:brightness-105", bar: "bg-purple-dark" },
+  { href: "/", label: "Home", mobile: "bg-orange text-white", desktop: "lg:bg-orange lg:text-white", hover: "hover:brightness-105", bar: "bg-purple-dark" },
   { href: "/schools", label: "Schools", mobile: "bg-teal text-purple-dark", desktop: "lg:bg-teal lg:text-purple-dark", hover: "hover:brightness-105", bar: "bg-purple-dark" },
-  { href: "/learning-support", label: "Learning Support", mobile: "bg-purple text-white", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-white lg:bg-purple-dark" },
-  { href: "/camps", label: "Camps", mobile: "bg-green text-purple-dark", desktop: "lg:bg-purple lg:text-white", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
-  { href: "/playgroups", label: "Playgroups", mobile: "bg-teal text-purple-dark", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-105", bar: "bg-purple-dark" },
-  { href: "/activities", label: "Activities", mobile: "bg-orange text-purple-dark", desktop: "lg:bg-orange lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-purple-dark" },
-  { href: "/healthcare", label: "Healthcare", mobile: "bg-green text-purple-dark", desktop: "lg:bg-teal lg:text-purple-dark", hover: "hover:brightness-105", bar: "bg-purple-dark" },
-  { href: "/blog", label: "Blog", mobile: "bg-purple text-white", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-white lg:bg-purple-dark" },
-  { href: "/contact", label: "Contact", mobile: "bg-orange text-purple-dark", desktop: "lg:bg-purple lg:text-white", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
+  { href: "/blog", label: "Guides", mobile: "bg-purple text-white", desktop: "lg:bg-green lg:text-purple-dark", hover: "hover:brightness-110", bar: "bg-white lg:bg-purple-dark" },
+  { href: "/contact", label: "Contact", mobile: "bg-green text-purple-dark", desktop: "lg:bg-purple lg:text-white", hover: "hover:brightness-110", bar: "bg-purple-dark lg:bg-white" },
   { href: "/contact#advertise", label: "Advertise With Us", mobile: "bg-purple-dark text-white", desktop: "lg:bg-purple-dark lg:text-white", hover: "hover:brightness-150", bar: "bg-white" },
+  { href: "https://www.bkkfamilies.com", label: "Bangkok ↗", mobile: "bg-sand text-purple-dark", desktop: "lg:bg-sand lg:text-purple-dark", hover: "hover:brightness-95", bar: "bg-purple-dark", external: true },
 ];
 
 export default function Nav() {
@@ -56,11 +54,11 @@ export default function Nav() {
         <Link href="/" className="flex items-center gap-2.5">
           <Logo size={36} />
           <span className="font-heading text-lg font-bold text-purple-dark sm:text-xl">
-            BKK Families
+            Phuket Families
           </span>
         </Link>
         <p className="hidden text-sm font-extrabold uppercase tracking-widest text-purple-dark lg:block">
-          Your Bangkok Roadmap
+          Your Phuket Roadmap
         </p>
         <button
           type="button"
@@ -81,10 +79,22 @@ export default function Nav() {
       <nav
         id="main-nav"
         aria-label="Main"
-        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-10`}
+        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-6`}
       >
         {LINKS.map((l) => {
-          const active = isActive(l.href);
+          const active = !l.external && isActive(l.href);
+          if (l.external) {
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                title="BKK Families, our sister site for Bangkok"
+                className={`relative flex items-center justify-center px-1 py-4 text-center text-sm font-bold uppercase tracking-tight transition lg:px-2 lg:py-3 lg:text-[0.7rem] xl:tracking-wide ${l.mobile} ${l.desktop} ${l.hover}`}
+              >
+                {l.label}
+              </a>
+            );
+          }
           return (
             <Link
               key={l.href}

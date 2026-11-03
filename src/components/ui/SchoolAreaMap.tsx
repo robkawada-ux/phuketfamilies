@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { AREAS, type Area } from "@/lib/schools";
 
-// A simplified, not-to-scale map of Bangkok split into the nine directory
-// locations. The shapes only need to put each area on the right side of the
-// city relative to the others, so parents can find their side of town; the
-// landmarks do the real work of telling them which region they live in.
+// A simplified, not-to-scale map of Phuket split into the five directory
+// areas. The shapes only need to put each area in the right part of the
+// island relative to the others; the landmarks do the real work of telling
+// a parent which area they live in.
 const REGIONS: {
   id: Area;
   short: string;
@@ -15,101 +15,41 @@ const REGIONS: {
   landmarks: string[];
 }[] = [
   {
-    id: "nonthaburi",
-    short: "Nonthaburi",
-    points: "20,20 230,20 230,150 140,170 20,170",
-    label: [110, 70],
-    landmarks: ["MRT Purple Line", "Nichada Thani", "Impact Muang Thong Thani", "Central WestGate"],
-  },
-  {
     id: "north",
     short: "North",
-    points: "230,20 580,20 580,150 380,150 330,170 230,150",
-    label: [410, 82],
-    landmarks: ["BTS Mo Chit", "Chatuchak Weekend Market", "Don Mueang Airport", "Future Park Rangsit"],
+    points: "150,18 200,22 225,70 238,130 250,200 190,200 85,200 95,150 110,90 130,45",
+    label: [168, 120],
+    landmarks: ["Phuket International Airport", "Thalang town", "Heroines Monument", "Thanyapura", "Nai Yang and Mai Khao beaches"],
   },
   {
-    id: "rama9",
-    short: "Rama 9",
-    points: "140,170 230,150 330,170 380,150 390,215 300,215 175,230",
-    label: [212, 190],
-    landmarks: ["MRT Phra Ram 9", "MRT Huai Khwang", "MRT Lat Phrao", "Central Rama 9"],
-  },
-  {
-    id: "east",
-    short: "East",
-    points: "380,150 580,150 580,330 450,330 430,250 390,215",
-    label: [505, 200],
-    landmarks: ["The Mall Bang Kapi", "Seacon Square", "Airport Rail Link Lat Krabang", "Pink Line Min Buri"],
+    id: "west",
+    short: "West Coast",
+    points: "85,200 190,200 190,290 80,290 66,250",
+    label: [130, 250],
+    landmarks: ["Laguna Phuket", "Bangtao Beach", "Boat Avenue", "Porto de Phuket", "Surin Beach"],
   },
   {
     id: "central",
-    short: "Central",
-    points: "175,230 300,215 320,330 250,390 190,330",
-    label: [255, 350],
-    landmarks: ["BTS Siam", "BTS Sala Daeng", "MRT Lumphini", "Lumpini Park"],
+    short: "Kathu",
+    points: "80,290 190,290 190,400 110,400 86,360 70,320",
+    label: [138, 350],
+    landmarks: ["Kathu", "Patong Beach", "Jungceylon", "Kathu Waterfall"],
   },
   {
-    id: "sukhumvit",
-    short: "Sukhumvit",
-    points: "300,215 390,215 430,250 400,300 320,330",
-    label: [380, 247],
-    landmarks: ["BTS Asok", "BTS Phrom Phong", "BTS Thong Lo", "BTS Ekkamai"],
+    id: "town",
+    short: "Town",
+    points: "190,200 250,200 262,250 272,300 268,350 255,400 190,400",
+    label: [228, 300],
+    landmarks: ["Phuket Old Town", "Central Phuket Festival", "Boat Lagoon", "Royal Phuket Marina", "Bangkok Hospital Phuket"],
   },
   {
-    id: "onnut",
-    short: "On Nut",
-    points: "320,330 400,300 430,250 450,330 470,380 360,400",
-    label: [372, 358],
-    landmarks: ["BTS Phra Khanong", "BTS On Nut", "BTS Bang Chak", "Suan Luang Rama IX Park"],
-  },
-  {
-    id: "bangna",
-    short: "Bang Na",
-    points: "190,330 250,390 320,330 360,400 470,380 450,330 580,330 580,500 170,500",
-    label: [320, 472],
-    landmarks: ["BTS Udom Suk", "BTS Bearing", "Mega Bangna", "Suvarnabhumi Airport"],
-  },
-  {
-    id: "thonburi",
-    short: "Thonburi",
-    points: "20,170 140,170 175,230 190,330 170,500 20,500",
-    label: [80, 445],
-    landmarks: ["BTS Saphan Taksin", "BTS Wongwian Yai", "ICONSIAM", "Central Rama 2"],
+    id: "south",
+    short: "South",
+    points: "110,400 255,400 245,440 230,480 205,520 170,540 140,530 120,495 100,450",
+    label: [178, 465],
+    landmarks: ["Chalong Circle", "Wat Chalong", "Big Buddha", "Rawai Beach", "Nai Harn Beach"],
   },
 ];
-
-// Rail lines, drawn schematically so they pass through the right regions.
-// Only the best-known stations are named; the rest of each line is implied.
-const LINES: { id: string; name: string; color: string; points: string }[] = [
-  { id: "purple", name: "MRT Purple Line", color: "#8E5BB5", points: "215,115 150,122 70,142" },
-  { id: "arl", name: "Airport Rail Link", color: "#C8102E", points: "225,236 300,228 400,224 470,250 520,282 545,350 550,455" },
-  { id: "mrt", name: "MRT Blue Line", color: "#1E4DA1", points: "205,285 250,295 330,262 325,228 318,200 315,182 288,176 300,122 245,105 215,115 165,140 120,185 110,290 165,300 185,285 205,285" },
-  { id: "silom", name: "BTS Silom Line", color: "#00826E", points: "215,262 232,298 222,318 193,325 165,340 140,352 85,380" },
-  { id: "sukhumvit", name: "BTS Sukhumvit Line", color: "#7CB342", points: "300,122 285,165 255,212 215,262 240,262 330,262 352,266 375,271 395,279 415,300 425,325 445,370 455,400 470,425" },
-];
-
-const STATIONS: { name: string; x: number; y: number; color: string; dx?: number; dy?: number; anchor?: "start" | "end" | "middle"; big?: boolean }[] = [
-  { name: "Mo Chit / Chatuchak", x: 300, y: 122, color: "#7CB342", dx: 8, dy: -6, anchor: "start", big: true },
-  { name: "Siam", x: 215, y: 262, color: "#7CB342", dx: -8, dy: -6, anchor: "end", big: true },
-  { name: "Asok / Sukhumvit", x: 330, y: 262, color: "#7CB342", dy: 16, anchor: "middle", big: true },
-  { name: "Phrom Phong", x: 352, y: 266, color: "#7CB342", dx: 2, dy: 30, anchor: "middle" },
-  { name: "Thong Lo", x: 375, y: 271, color: "#7CB342", dx: 6, dy: -7, anchor: "start" },
-  { name: "On Nut", x: 425, y: 325, color: "#7CB342", dx: 8, dy: 4, anchor: "start" },
-  { name: "Bearing", x: 470, y: 425, color: "#7CB342", dx: -8, dy: 4, anchor: "end" },
-  { name: "Sala Daeng", x: 232, y: 298, color: "#00826E", dx: 7, dy: 12, anchor: "start" },
-  { name: "Saphan Taksin", x: 193, y: 325, color: "#00826E", dx: -8, dy: 14, anchor: "end" },
-  { name: "Wongwian Yai", x: 140, y: 352, color: "#00826E", dx: -2, dy: 16, anchor: "middle" },
-  { name: "Lumphini", x: 250, y: 295, color: "#1E4DA1", dx: 4, dy: -8, anchor: "start" },
-  { name: "Phra Ram 9", x: 318, y: 200, color: "#1E4DA1", dx: 7, dy: 4, anchor: "start" },
-  { name: "Lat Phrao", x: 288, y: 176, color: "#1E4DA1", dx: -7, dy: -5, anchor: "end" },
-  { name: "Tha Phra", x: 110, y: 290, color: "#1E4DA1", dx: -7, dy: 4, anchor: "end" },
-  { name: "Lat Krabang", x: 520, y: 282, color: "#C8102E", dx: 8, dy: 4, anchor: "start" },
-  { name: "Suvarnabhumi Airport", x: 550, y: 455, color: "#C8102E", dx: 0, dy: 18, anchor: "end" },
-];
-
-const RIVER =
-  "M150,20 C140,90 135,140 150,190 C175,240 185,290 195,340 C210,400 270,440 330,460 C370,475 400,490 420,500";
 
 export default function SchoolAreaMap({
   selected,
@@ -129,11 +69,18 @@ export default function SchoolAreaMap({
     <div className="grid gap-5 md:grid-cols-[3fr_2fr]">
       <div>
         <svg
-          viewBox="0 0 600 520"
-          className="h-auto w-full select-none"
+          viewBox="0 0 340 560"
+          className="mx-auto h-auto w-full max-w-sm select-none"
           role="group"
-          aria-label="Map of Bangkok divided into nine school locations"
+          aria-label="Map of Phuket divided into five school areas"
         >
+          <rect x={0} y={0} width={340} height={560} rx={16} fill="#EAFBFC" />
+          <text x={22} y={300} fontSize={12} fill="#2a8f9c" transform="rotate(-90 22 300)" pointerEvents="none">
+            Andaman Sea
+          </text>
+          <text x={312} y={180} fontSize={12} fill="#2a8f9c" transform="rotate(90 312 180)" pointerEvents="none">
+            Phang Nga Bay
+          </text>
           {REGIONS.map((r) => {
             const isSelected = selected === r.id;
             const isHover = hover === r.id;
@@ -158,57 +105,20 @@ export default function SchoolAreaMap({
                 onBlur={() => setHover(null)}
                 className="cursor-pointer outline-none transition-colors"
                 style={{
-                  fill: isSelected ? "#5C2D91" : isHover ? "#FEF3E8" : "#F3EEF9",
-                  stroke: isHover && !isSelected ? "#F4831F" : "#FFFFFF",
+                  fill: isSelected ? "#0E7C86" : isHover ? "#FFF0EC" : "#F6EFE3",
+                  stroke: isHover && !isSelected ? "#FF6B4A" : "#FFFFFF",
                   strokeWidth: 3,
                   strokeLinejoin: "round",
                 }}
               />
             );
           })}
-          <path
-            d={RIVER}
-            fill="none"
-            stroke="#3EC1D3"
-            strokeWidth={7}
-            strokeLinecap="round"
-            opacity={0.55}
-            pointerEvents="none"
-          />
-          <text x={120} y={238} fontSize={11} fill="#2a8f9c" transform="rotate(62 120 238)" pointerEvents="none">
-            Chao Phraya
-          </text>
+          {/* Airport marker, the one landmark everyone knows */}
           <g pointerEvents="none">
-            {LINES.map((l) => (
-              <polyline
-                key={l.id}
-                points={l.points}
-                fill="none"
-                stroke={l.color}
-                strokeWidth={4}
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                opacity={0.9}
-              />
-            ))}
-            {STATIONS.map((s) => (
-              <g key={s.name}>
-                <circle cx={s.x} cy={s.y} r={s.big ? 5.5 : 4} fill="#FFFFFF" stroke={s.color} strokeWidth={2.5} />
-                <text
-                  x={s.x + (s.dx ?? 0)}
-                  y={s.y + (s.dy ?? 0)}
-                  textAnchor={s.anchor ?? "start"}
-                  fontSize={s.big ? 11 : 10}
-                  fontWeight={s.big ? 700 : 600}
-                  fill="#333333"
-                  stroke="#FFFFFF"
-                  strokeWidth={3}
-                  paintOrder="stroke"
-                >
-                  {s.name}
-                </text>
-              </g>
-            ))}
+            <circle cx={150} cy={58} r={5} fill="#FFFFFF" stroke="#1B2A3A" strokeWidth={2} />
+            <text x={160} y={62} fontSize={10} fontWeight={600} fill="#333333" stroke="#FFFFFF" strokeWidth={3} paintOrder="stroke">
+              Airport
+            </text>
           </g>
           {REGIONS.map((r) => {
             const isSelected = selected === r.id;
@@ -217,25 +127,25 @@ export default function SchoolAreaMap({
                 <text
                   x={r.label[0]}
                   y={r.label[1]}
-                  fontSize={15}
+                  fontSize={14}
                   fontWeight={700}
-                  fill={isSelected ? "#FFFFFF" : "#3D1E5C"}
+                  fill={isSelected ? "#FFFFFF" : "#1B2A3A"}
                 >
                   {r.short}
+                </text>
+                <text
+                  x={r.label[0]}
+                  y={r.label[1] + 16}
+                  fontSize={11}
+                  fill={isSelected ? "#FFFFFF" : "#555555"}
+                >
+                  {counts[r.id]} {counts[r.id] === 1 ? "school" : "schools"}
                 </text>
               </g>
             );
           })}
         </svg>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-600">
-          {LINES.slice().reverse().map((l) => (
-            <span key={l.id} className="inline-flex items-center gap-1.5">
-              <span className="inline-block h-1 w-5 rounded-full" style={{ background: l.color }} />
-              {l.name}
-            </span>
-          ))}
-        </div>
-        <p className="mt-1 text-xs text-neutral-400">Simplified map, not to scale. Only major stations are shown.</p>
+        <p className="mt-1 text-center text-xs text-neutral-400">Simplified map, not to scale.</p>
       </div>
 
       <div className="rounded-xl border border-black/5 bg-neutral-50 p-5 text-sm">
@@ -260,7 +170,7 @@ export default function SchoolAreaMap({
                 onClick={() => onSelect("All")}
                 className="mt-3 text-sm font-semibold text-teal hover:underline"
               >
-                Show all locations
+                Show all areas
               </button>
             ) : (
               <button
@@ -274,12 +184,13 @@ export default function SchoolAreaMap({
           </>
         ) : (
           <>
-            <h3 className="font-heading text-lg font-bold text-purple-dark">Pick your side of town</h3>
+            <h3 className="font-heading text-lg font-bold text-purple-dark">Pick your part of the island</h3>
             <p className="mt-2 text-neutral-600">
-              Tap a region on the map to see the schools there. Hover over or tap a region to see its
-              BTS and MRT stations and landmarks, so you can tell which one you live in.
+              Tap an area on the map to see the schools there. Hover over or tap an area to see its
+              landmarks, so you can tell which one you live in. School runs on Phuket are mostly by
+              car or school bus, so being in the right part of the island matters.
             </p>
-            <p className="mt-3 text-neutral-600">Tap the selected region again to clear it.</p>
+            <p className="mt-3 text-neutral-600">Tap the selected area again to clear it.</p>
           </>
         )}
       </div>
