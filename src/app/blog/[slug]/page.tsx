@@ -19,7 +19,10 @@ import RichText, { stripRichText } from "@/components/ui/RichText";
  * REGENERATING ITS CARD. Three cards here were left showing old titles after
  * a round of rewrites before anyone noticed.
  */
-const OG_CARDS = new Set<string>([]);
+const OG_CARDS = new Set<string>([
+  "phuket-international-school-fees",
+  "phuket-hospitals-for-families",
+]);
 
 /** Hero photo if there is one, else a generated card, else the blog default. */
 function shareImage(slug: string, heroImage?: string) {
@@ -110,7 +113,7 @@ export default async function ArticlePage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-      { "@type": "ListItem", position: 2, name: "Blog", item: SITE + "/blog" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: SITE + "/blog" },
       { "@type": "ListItem", position: 3, name: article.title, item: url },
     ],
   };
@@ -150,7 +153,7 @@ export default async function ArticlePage({
       <nav aria-label="Breadcrumb" className="mb-4 text-xs text-neutral-400">
         <Link href="/" className="hover:text-orange">Home</Link>
         <span className="mx-1.5">/</span>
-        <Link href="/blog" className="hover:text-orange">Blog</Link>
+        <Link href="/blog" className="hover:text-orange">Guides</Link>
         <span className="mx-1.5">/</span>
         <span className="text-neutral-500">{article.title}</span>
       </nav>
@@ -164,6 +167,7 @@ export default async function ArticlePage({
       <p className="mt-3 text-sm text-neutral-400">
         {new Date(article.date).toLocaleDateString("en-US", {
           month: "long",
+          timeZone: "UTC",
           day: "numeric",
           year: "numeric",
         })}

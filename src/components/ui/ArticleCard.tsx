@@ -18,6 +18,7 @@ export default function ArticleCard({ article }: { article: Article }) {
         <p className="mt-2 text-sm text-neutral-600">{article.excerpt}</p>
         <p className="mt-3 text-xs text-neutral-400">
           {new Date(article.date).toLocaleDateString("en-US", {
+            timeZone: "UTC",
             month: "long",
             year: "numeric",
           })}
