@@ -22,6 +22,10 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Logo: the BKK Families four-dot mark in the new colours. Keep `Logo.tsx`, `src/app/icon.svg`, `favicon.ico` and `apple-icon.png` in sync.
 - Nav has a "Bangkok" link to bkkfamilies.com; the footer has an "Also from us" cross-link (`SISTER_SITE` in seo.ts).
 
+## Photos
+- `public/images/articles/phuket-big-buddha.jpg` (Big Buddha, from Pierre, a photographer friend of Rob's) is the hero of the hospitals guide. Pierre does not want a credit line. Only use photos Pierre or Rob supplied, or properly licensed files: never stock previews, watermarked images or anything not taken in Phuket.
+- Articles take `heroImage` plus `heroAlt`. The share image prefers the generated card in `OG_CARDS` (it carries the headline) over the hero photo.
+
 ## Share images (Facebook previews), required on every page
 - Same rule as bkkfamilies: every page must emit an og:image. `og()` in `src/lib/seo.ts` attaches the nearest section card (`SECTION_CARDS`: the healthcare pages, /schools, /blog), falling back to the homepage card.
 - Cards are 1200x630, deep teal with the road and palm. Articles without a hero image use `public/images/og/blog-default.png`.

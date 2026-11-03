@@ -24,10 +24,10 @@ const OG_CARDS = new Set<string>([
   "phuket-hospitals-for-families",
 ]);
 
-/** Hero photo if there is one, else a generated card, else the blog default. */
+/** Generated card if there is one (it carries the headline), else the hero photo, else the blog default. */
 function shareImage(slug: string, heroImage?: string) {
-  if (heroImage) return heroImage;
   if (OG_CARDS.has(slug)) return `/images/og/blog/${slug}.png`;
+  if (heroImage) return heroImage;
   return "/images/og/blog-default.png";
 }
 
@@ -205,7 +205,7 @@ export default async function ArticlePage({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={article.heroImage}
-            alt={article.title}
+            alt={article.heroAlt ?? article.title}
             className="h-auto w-full"
           />
         </div>

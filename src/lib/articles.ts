@@ -14,6 +14,8 @@ export interface Article {
    */
   body: string[];
   heroImage?: string;
+  /** Describes the hero photo for screen readers and image search. Falls back to the title. */
+  heroAlt?: string;
   images?: { src: string; alt: string; afterParagraph: number }[];
   headings?: { beforeParagraph: number; text: string }[];
   /** Answers accept the same inline markup as body paragraphs. */
@@ -127,6 +129,8 @@ export const ARTICLES: Article[] = [
     title: "Hospitals in Phuket for Families: Where to Take Your Child",
     category: "Healthcare",
     date: "2026-11-03",
+    heroImage: "/images/articles/phuket-big-buddha.jpg",
+    heroAlt: "The Big Buddha statue on Nakkerd Hill in Phuket under a blue sky, with visitors on the steps",
     excerpt:
       "Which Phuket hospital to use for a sick child, an emergency, a new baby or a dentist, with children's clinic hours, delivery prices and the clinics closest to home.",
     metaDescription:
