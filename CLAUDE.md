@@ -23,7 +23,7 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Nav has a "Bangkok" link to bkkfamilies.com; the footer has an "Also from us" cross-link (`SISTER_SITE` in seo.ts).
 
 ## Photos
-- `public/images/articles/phuket-big-buddha.jpg` (Big Buddha, from Pierre, a photographer friend of Rob's) is the hero of the hospitals guide. Pierre does not want a credit line. Only use photos Pierre or Rob supplied, or properly licensed files: never stock previews, watermarked images or anything not taken in Phuket.
+- `public/images/articles/phuket-big-buddha.jpg` (Big Buddha, from Pierre, a photographer friend of Rob's) is the hero of the hospitals guide. `kids-group-activity.jpg` (children at an outdoor table with a teacher, supplied by Rob with permission, not taken in Phuket) is the hero of the school fees guide at Rob's request. Pierre does not want a credit line. Only use photos Pierre or Rob supplied, or properly licensed files: never stock previews, watermarked images or anything not taken in Phuket.
 - Articles take `heroImage` plus `heroAlt`. The share image prefers the generated card in `OG_CARDS` (it carries the headline) over the hero photo.
 
 ## Share images (Facebook previews), required on every page

@@ -37,6 +37,8 @@ export const ARTICLES: Article[] = [
     title: "Phuket International School Fees 2026/27: 18 Schools Compared",
     category: "Schools",
     date: "2026-11-03",
+    heroImage: "/images/articles/kids-group-activity.jpg",
+    heroAlt: "A teacher smiling as a group of children fill bowls with vegetables at an outdoor table",
     excerpt:
       "What 18 international schools in Phuket charge for 2026/27, from 159,000 to 982,700 baht a year, plus joining fees, bonds, the school run and which schools stop early.",
     metaDescription:
