@@ -9,8 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/schools`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
+    // The guides listing joins the sitemap once it has something in it.
+    ...(ARTICLES.length > 0
+      ? [{ url: `${baseUrl}/blog`, changeFrequency: "weekly" as const, priority: 0.8 }]
+      : []),
   ];
 
   const articlePages: MetadataRoute.Sitemap = ARTICLES.map((a) => ({

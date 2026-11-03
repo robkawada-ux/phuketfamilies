@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { og, SISTER_SITE } from "@/lib/seo";
+import { og, SISTER_SITE, SITE, SITE_NAME } from "@/lib/seo";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   openGraph: og({ title: TITLE, description: DESCRIPTION, path: "/" }),
 };
 
+// Tells search engines the site's name (shown above results) and who
+// publishes it.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    alternateName: "phuketfamilies.com",
+    url: SITE,
+    inLanguage: "en",
+    publisher: { "@id": `${SITE}/#organization` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: SITE_NAME,
+    url: SITE,
+    logo: `${SITE}/apple-icon.png`,
+    description: DESCRIPTION,
+    areaServed: { "@type": "Place", name: "Phuket, Thailand" },
+  },
+];
+
 export default function HomePage() {
   const latest = ARTICLES.slice()
     .sort((a, b) => (a.date < b.date ? 1 : -1))
@@ -30,6 +54,10 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* HERO */}
       <section className="bg-orange px-4 py-20 text-white md:py-28">
         <div className="mx-auto max-w-6xl">

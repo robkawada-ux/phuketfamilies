@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { SCHOOLS, AREA_LABEL } from "@/lib/schools";
+import { SCHOOLS, AREA_LABEL, AREAS } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
 import {
   schoolFees,
@@ -48,10 +48,13 @@ export async function generateMetadata({
   const cal = calendarFor(school.slug);
   const dates = hasPublishableDates(cal);
   const year = summary?.feeYear ?? "2026/27";
+  // A published range in schools.ts counts as fees worth putting in the
+  // title, since "<school> fees" is what parents search for.
+  const hasRange = !summary && !!school.feeRange && /\d/.test(school.feeRange);
   const topic =
-    summary && dates
+    (summary || hasRange) && dates
       ? `Fees and Term Dates ${year}`
-      : summary
+      : summary || hasRange
         ? `Fees ${year}`
         : dates
           ? "Term Dates 2026/27"
@@ -71,6 +74,20 @@ export async function generateMetadata({
       `${school.name} fees ${summary.feeYear}, from the school's own schedule: ${lead}, ${top}.${dates ? " Plus term dates and holidays." : " Plus one-time fees and extras."}`,
       `${school.name} fees ${summary.feeYear}: ${lead}, ${top}. Read from the school's own schedule.`,
       `${school.name} fees ${summary.feeYear}: ${lead}, ${top}.`,
+    ];
+    description = candidates.find((c) => c.length <= 160) ?? fallback;
+  } else if (hasRange) {
+    const range = school.feeRange!.replace(/\/year/, " a year");
+    const place = AREAS.find((a) => a.id === school.areas[0])?.place ?? "Phuket";
+    const area = place.includes("Phuket") ? place : `${place}, Phuket`;
+    const ages = school.ageRange ? ` for ${school.ageRange.toLowerCase()}` : "";
+    const curricula = school.curricula.map((c) => (c === "International Baccalaureate" ? "IB" : c));
+    const kind = `${curricula.join(" and ")} school${ages}`;
+    const candidates = [
+      `${school.name} fees ${year}: ${range}. ${kind} in ${area}.`,
+      `${school.name} fees ${year}: ${range}. ${kind} in Phuket.`,
+      `${school.name} fees ${year}: ${range}. ${curricula.join(" and ")} school in ${area}.`,
+      `${school.name} fees ${year}: ${range}.`,
     ];
     description = candidates.find((c) => c.length <= 160) ?? fallback;
   } else if (dates) {

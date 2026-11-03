@@ -10,12 +10,13 @@ export type Area = "north" | "west" | "central" | "town" | "south";
  * or school bus, so parents choose a part of the island, not a district. The
  * covers line says which places fall in each.
  */
-export const AREAS: { id: Area; label: string; covers: string }[] = [
-  { id: "north", label: "North: Thalang and the airport", covers: "Thalang, Si Sunthon, Thep Krasattri, Mai Khao, Nai Yang and the airport" },
-  { id: "west", label: "West coast: Cherngtalay and Bangtao", covers: "Cherngtalay, Bangtao, Laguna, Pasak, Surin and Layan" },
-  { id: "central", label: "Kathu and Patong", covers: "Kathu, Patong and the valley between them" },
-  { id: "town", label: "Phuket Town, Wichit and Koh Kaew", covers: "Phuket Town, Wichit, Ratsada, Koh Kaew, Boat Lagoon and Cape Panwa" },
-  { id: "south", label: "South: Chalong and Rawai", covers: "Chalong, Rawai, Nai Harn, Kata and Karon" },
+/** place: short name used in search descriptions, e.g. "in Thalang, Phuket". */
+export const AREAS: { id: Area; label: string; covers: string; place: string }[] = [
+  { id: "north", label: "North: Thalang and the airport", covers: "Thalang, Si Sunthon, Thep Krasattri, Mai Khao, Nai Yang and the airport", place: "Thalang" },
+  { id: "west", label: "West coast: Cherngtalay and Bangtao", covers: "Cherngtalay, Bangtao, Laguna, Pasak, Surin and Layan", place: "Cherngtalay" },
+  { id: "central", label: "Kathu and Patong", covers: "Kathu, Patong and the valley between them", place: "Kathu" },
+  { id: "town", label: "Phuket Town, Wichit and Koh Kaew", covers: "Phuket Town, Wichit, Ratsada, Koh Kaew, Boat Lagoon and Cape Panwa", place: "Phuket Town" },
+  { id: "south", label: "South: Chalong and Rawai", covers: "Chalong, Rawai, Nai Harn, Kata and Karon", place: "Chalong and Rawai" },
 ];
 
 export const AREA_LABEL = Object.fromEntries(

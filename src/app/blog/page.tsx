@@ -7,6 +7,9 @@ import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
+  // An empty listing is thin content: keep it out of search until the first
+  // guide is published. Links on it are still followed.
+  ...(ARTICLES.length === 0 ? { robots: { index: false, follow: true } } : {}),
   title: "Guides",
   description: "Practical guides for families living in or moving to Phuket.",
   openGraph: og({
