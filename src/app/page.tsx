@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { og, SISTER_SITE, SITE, SITE_NAME } from "@/lib/seo";
-import Image from "next/image";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
@@ -60,23 +59,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* HERO */}
-      <section className="relative overflow-hidden bg-purple-dark px-4 py-20 text-white md:py-28">
-        <Image
-          src="/images/photos/similan-donald-duck-bay.jpg"
-          alt="Turquoise water and white sand at Donald Duck Bay in the Similan Islands, a day trip from Phuket"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-purple-dark/60 md:bg-transparent md:bg-gradient-to-r md:from-purple-dark/90 md:via-purple-dark/60 md:to-purple-dark/10"
-        />
-        <p className="absolute bottom-14 right-4 z-10 text-xs text-white/80 md:bottom-16">
-          Donald Duck Bay, Similan Islands. Photo: Pierrick Lemaret
-        </p>
-        <div className="relative z-10 mx-auto max-w-6xl">
+      <section className="bg-orange px-4 py-20 text-white md:py-28">
+        <div className="mx-auto max-w-6xl">
           <p className="mb-3 text-base font-extrabold uppercase tracking-widest text-white">
             Your Phuket Roadmap
           </p>
