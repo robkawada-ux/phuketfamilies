@@ -12,8 +12,14 @@ import {
   type Budget,
   type School,
 } from "@/lib/schools";
+import { isFeaturedNow } from "@/lib/featured";
 
-export default function SchoolDirectory() {
+/**
+ * `today` (YYYY-MM-DD, Bangkok) comes from the server page, which is
+ * regenerated hourly, so featured placements switch on and off by date and
+ * the server and browser always agree on which schools are featured.
+ */
+export default function SchoolDirectory({ today }: { today: string }) {
   const [query, setQuery] = useState("");
   const [curriculum, setCurriculum] = useState("All");
   const [budget, setBudget] = useState<"All" | Budget>("All");
@@ -35,8 +41,15 @@ export default function SchoolDirectory() {
       const matchesBudget = budget === "All" || s.budget === budget;
       const matchesArea = area === "All" || s.areas.includes(area);
       return matchesQuery && matchesCurriculum && matchesBudget && matchesArea;
-    }).sort((a, b) => a.name.localeCompare(b.name));
-  }, [query, curriculum, budget, area]);
+    }).sort((a, b) => {
+      // Paid featured schools first in their group, then A to Z.
+      const fa = isFeaturedNow(a.featured, today) ? 0 : 1;
+      const fb = isFeaturedNow(b.featured, today) ? 0 : 1;
+      return fa - fb || a.name.localeCompare(b.name);
+    });
+  }, [query, curriculum, budget, area, today]);
+
+  const anyFeatured = filtered.some((s) => isFeaturedNow(s.featured, today));
 
   // Group by location, in the fixed AREAS order. With a location chosen, a
   // school belongs to that group even when it is not the school's main area.
@@ -134,6 +147,12 @@ export default function SchoolDirectory() {
 
       <p className="mb-6 text-sm text-neutral-500">
         Showing {filtered.length} of {SCHOOLS.length} schools
+        {anyFeatured && (
+          <span className="mt-1 block text-xs">
+            Featured schools are paid placements and appear first in their
+            area. Paying never changes what we write about a school.
+          </span>
+        )}
       </p>
 
       {/* Results, grouped by location */}
@@ -151,7 +170,12 @@ export default function SchoolDirectory() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {g.schools.map((s) => (
-                <SchoolCard key={s.slug} school={s} shownIn={g.id} />
+                <SchoolCard
+                  key={s.slug}
+                  school={s}
+                  shownIn={g.id}
+                  featured={isFeaturedNow(s.featured, today)}
+                />
               ))}
             </div>
           </section>
@@ -166,13 +190,39 @@ export default function SchoolDirectory() {
   );
 }
 
-function SchoolCard({ school: s, shownIn }: { school: School; shownIn: Area }) {
+function SchoolCard({
+  school: s,
+  shownIn,
+  featured,
+}: {
+  school: School;
+  shownIn: Area;
+  featured: boolean;
+}) {
   const otherAreas = s.areas.filter((a) => a !== shownIn);
   return (
     <Link
       href={`/schools/${s.slug}`}
-      className="block rounded-xl border border-black/5 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      className={`block overflow-hidden rounded-xl border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+        featured ? "border-orange ring-2 ring-orange/40" : "border-black/5"
+      }`}
     >
+      {featured && s.photo && (
+        <div className="relative aspect-[16/9] w-full bg-neutral-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={s.photo}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-top"
+          />
+        </div>
+      )}
+      <div className="p-5">
+      {featured && (
+        <span className="mb-2 inline-block rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-purple-dark">
+          Featured
+        </span>
+      )}
       <h3 className="font-heading text-base font-bold text-purple-dark">
         {s.name}
       </h3>
@@ -198,6 +248,12 @@ function SchoolCard({ school: s, shownIn }: { school: School; shownIn: Area }) {
           Also in: {otherAreas.map((a) => AREA_LABEL[a]).join(", ")}
         </p>
       )}
+      {featured && s.featured?.offer && (
+        <p className="mt-3 rounded-lg bg-sand px-3 py-2 text-sm font-semibold text-purple-dark">
+          {s.featured.offer}
+        </p>
+      )}
+      </div>
     </Link>
   );
 }

@@ -1,4 +1,5 @@
 import { verifiedBudget } from "./schoolFees";
+import type { Featured } from "./featured";
 
 export type Budget = "under400k" | "over400k" | "unknown";
 
@@ -54,6 +55,11 @@ export interface School {
    * to mention Koh Kaew). The directory still groups by `areas`.
    */
   location?: string;
+  /**
+   * Paid featured placement (see lib/featured.ts). Only for a school that has
+   * paid; it never changes anything else in the listing.
+   */
+  featured?: Featured;
   /**
    * Held back until the school's license is verified. Pending schools are
    * left out of SCHOOLS, so they have no page, no directory card and no

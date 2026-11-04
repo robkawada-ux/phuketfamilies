@@ -4,6 +4,10 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import CampsDirectory from "@/components/ui/CampsDirectory";
 import { CAMPS, ALL_SESSIONS } from "@/lib/camps";
+import { todayInBangkok } from "@/lib/featured";
+
+// Regenerated hourly so paid featured placements switch on and off by date.
+export const revalidate = 3600;
 
 const TITLE = "Holiday Camps in Phuket 2026/27";
 const DESCRIPTION =
@@ -107,7 +111,8 @@ export default function CampsPage() {
             you should have a shortlist in about thirty seconds.
           </p>
           <p>
-            Nobody pays to be listed here. Every date and price comes from the
+            Nobody pays to be listed here, and the few paid featured placements
+            are always labelled. Every date and price comes from the
             camp&rsquo;s own page, and where a price is not published we say
             so rather than guess. Where a camp runs every year but has not
             announced its next dates, we show the dates it last ran and mark
@@ -116,7 +121,7 @@ export default function CampsPage() {
         </div>
 
         <div id="directory" className="mt-12 scroll-mt-28">
-          <CampsDirectory />
+          <CampsDirectory today={todayInBangkok()} />
         </div>
 
         <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-black/5 bg-teal-50 p-6">

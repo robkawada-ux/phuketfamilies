@@ -11,6 +11,10 @@ import {
   type CampSession,
 } from "@/lib/camps";
 import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
+import { isFeaturedNow } from "@/lib/featured";
+
+// Regenerated hourly so paid featured placements switch on and off by date.
+export const revalidate = 3600;
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -150,6 +154,7 @@ export default async function CampPage({
   ];
 
   const spooky = camp.theme === "halloween";
+  const featuredNow = isFeaturedNow(camp.featured);
 
   return (
     <>
@@ -206,6 +211,21 @@ export default async function CampPage({
       </div>
 
       <div className="mx-auto max-w-4xl px-4 py-10">
+        {featuredNow && (
+          <div className="mb-8 rounded-xl border border-orange bg-orange-50 p-5">
+            <span className="inline-block rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-purple-dark">
+              Featured camp
+            </span>
+            {camp.featured?.offer && (
+              <p className="mt-2 font-heading text-lg font-bold text-purple-dark">
+                {camp.featured.offer}
+              </p>
+            )}
+            <p className="mt-2 text-xs text-neutral-600">
+              This is a paid placement. Paying never changes what we write about a camp.
+            </p>
+          </div>
+        )}
         <div className="space-y-4 leading-relaxed text-neutral-700">
           {camp.description.split("\n\n").map((para) => (
             <p key={para.slice(0, 40)}>{para}</p>

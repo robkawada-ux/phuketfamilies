@@ -1,3 +1,5 @@
+import type { Featured } from "./featured";
+
 // Camps directory. One Camp per OPERATOR, with nested sessions.
 //
 // A Camp is the organisation that runs the camp. A CampSession is one
@@ -102,6 +104,13 @@ export interface Camp {
   photoCredit?: string;
   /** Context line under the image, e.g. what it is and when it was published. */
   photoCaption?: string;
+  /**
+   * Paid featured placement (see lib/featured.ts). Only for an operator that
+   * has paid; it never changes anything else in the listing. Sold per season:
+   * `windows` lists the camp seasons paid for, and only those weeks are
+   * featured in the directory. Leave it out to feature every week.
+   */
+  featured?: Featured & { windows?: BreakWindowId[] };
   description: string;
   /** Honesty box on the detail page, same pattern as learning support. */
   worthKnowing?: string;

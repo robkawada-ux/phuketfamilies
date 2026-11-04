@@ -59,3 +59,10 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Camp seasons are the `BREAK_WINDOWS` in `schoolBreaks.ts`, taken from operators' published schedules (no Phuket school calendars found): Christmas 2026/27, February half term, Jan to March for visiting families, Easter and Songkran, summer 2027.
 - Confirmed 2026/27 dates so far: Bamboo Valley (whole year), Thanyapura Future Stars, ISP. The rest show their 2026 run and need re-checking when summer 2027 dates come out (usually Feb to April).
 - Ivy Camps USA has no website link: ivycampsusa.com/thailand-summer-camps could not be loaded to confirm it.
+
+## Paid featured placements (built 4 Nov 2026, none sold yet)
+- Prices are in the claude.ai project doc `claude/phuket-rate-card.md` (featured school 4,500 baht for 3 months or 12,000 a year; featured camp 2,000 a season).
+- To sell one, add `featured: { from: "YYYY-MM-DD", until: "YYYY-MM-DD", offer?: "...", invoice?: "BEF-2026-0xx" }` to the school in `schools.ts` or the camp in `camps.ts`. Camps also take `windows: ["winter-2026", ...]` (the seasons paid for); only those weeks are featured. Dates are Bangkok time, `until` is inclusive. Logic in `src/lib/featured.ts`.
+- While running, the school or camp week shows first in its group with a "Featured" label, a coral border, the offer line, and (schools) the school's `photo` on the card; the detail page gets a "Featured school/camp" box saying it is a paid placement. A disclosure line appears under the result count whenever a featured item is visible. Paying never changes the description, fees or anything else.
+- /schools, /camps and their detail pages revalidate hourly (`export const revalidate = 3600`), so placements switch on and off by themselves without a redeploy. The directories take `today` from the server page so server and browser agree.
+

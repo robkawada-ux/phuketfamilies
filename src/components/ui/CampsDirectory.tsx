@@ -10,6 +10,16 @@ import {
   type CampFormat,
 } from "@/lib/camps";
 import { BREAK_WINDOWS, type BreakWindowId } from "@/lib/schoolBreaks";
+import { isFeaturedNow } from "@/lib/featured";
+
+/** A camp week is featured when its operator has paid for that season. */
+function sessionFeatured(
+  s: (typeof ALL_SESSIONS)[number],
+  today: string,
+): boolean {
+  const f = s.camp.featured;
+  return isFeaturedNow(f, today) && (!f?.windows || f.windows.includes(s.window));
+}
 
 const MONTHS = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -55,7 +65,11 @@ const FORMAT_LABEL: Record<CampFormat, string> = {
   residential: "Residential",
 };
 
-export default function CampsDirectory() {
+/**
+ * `today` (YYYY-MM-DD, Bangkok) comes from the server page, which is
+ * regenerated hourly, so featured placements switch on and off by date.
+ */
+export default function CampsDirectory({ today }: { today: string }) {
   const [query, setQuery] = useState("");
   const [window, setWindow] = useState<"All" | BreakWindowId>("All");
   const [category, setCategory] = useState<"All" | CampCategory>("All");
@@ -100,7 +114,11 @@ export default function CampsDirectory() {
         matchesAge
       );
     }).sort((a, b) => {
-      // Confirmed dates first, then by start date, then by name.
+      // Paid featured camps first, then confirmed dates, then by start
+      // date, then by name.
+      const fa = sessionFeatured(a, today) ? 0 : 1;
+      const fb = sessionFeatured(b, today) ? 0 : 1;
+      if (fa !== fb) return fa - fb;
       if (a.dateStatus !== b.dateStatus) {
         if (a.dateStatus === "confirmed") return -1;
         if (b.dateStatus === "confirmed") return 1;
@@ -112,7 +130,9 @@ export default function CampsDirectory() {
       if (b.startDate) return 1;
       return a.camp.name.localeCompare(b.camp.name);
     });
-  }, [query, window, category, area, format, age]);
+  }, [query, window, category, area, format, age, today]);
+
+  const anyFeatured = filtered.some((s) => sessionFeatured(s, today));
 
   const filtersActive =
     query !== "" ||
@@ -224,6 +244,12 @@ export default function CampsDirectory() {
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-neutral-500">
           Showing {filtered.length} of {ALL_SESSIONS.length} camp weeks
+          {anyFeatured && (
+            <span className="mt-1 block text-xs">
+              Featured camps are paid placements and appear first. Paying
+              never changes what we write about a camp.
+            </span>
+          )}
         </p>
         <button
           type="button"
@@ -251,12 +277,20 @@ export default function CampsDirectory() {
           const dates = range(s.startDate, s.endDate);
           const cost = price(s.priceFrom, s.priceTo, s.priceUnit);
           const past = s.dateStatus !== "confirmed";
+          const featured = sessionFeatured(s, today);
           return (
             <Link
               key={s.id}
               href={`/camps/${s.camp.slug}`}
-              className={`block rounded-xl border border-black/5 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${past ? "opacity-75" : ""}`}
+              className={`block rounded-xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                featured ? "border-orange ring-2 ring-orange/40" : "border-black/5"
+              } ${past && !featured ? "opacity-75" : ""}`}
             >
+              {featured && (
+                <span className="mb-2 inline-block rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-purple-dark">
+                  Featured
+                </span>
+              )}
               <h3 className="font-heading text-base font-bold text-purple-dark">
                 {s.programme}
               </h3>
@@ -302,6 +336,11 @@ export default function CampsDirectory() {
                   </span>
                 )}
               </p>
+              {featured && s.camp.featured?.offer && (
+                <p className="mt-3 rounded-lg bg-sand px-3 py-2 text-sm font-semibold text-purple-dark">
+                  {s.camp.featured.offer}
+                </p>
+              )}
             </Link>
           );
         })}

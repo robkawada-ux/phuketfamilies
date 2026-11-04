@@ -4,6 +4,10 @@ import PageHero from "@/components/ui/PageHero";
 import SchoolDirectory from "@/components/ui/SchoolDirectory";
 import { SCHOOLS } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
+import { todayInBangkok } from "@/lib/featured";
+
+// Regenerated hourly so paid featured placements switch on and off by date.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   alternates: { canonical: "/schools" },
@@ -55,7 +59,7 @@ export default function SchoolsPage() {
         color="teal"
       />
       <div className="mx-auto max-w-6xl px-4 py-12">
-        <SchoolDirectory />
+        <SchoolDirectory today={todayInBangkok()} />
       </div>
     </>
   );

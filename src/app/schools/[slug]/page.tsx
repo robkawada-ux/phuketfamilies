@@ -23,6 +23,10 @@ import {
   windowLabel,
   type SchoolCalendar,
 } from "@/lib/schoolBreaks";
+import { isFeaturedNow } from "@/lib/featured";
+
+// Regenerated hourly so paid featured placements switch on and off by date.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return SCHOOLS.map((s) => ({ slug: s.slug }));
@@ -173,6 +177,8 @@ export default async function SchoolPage({
     },
   ];
 
+  const featuredNow = isFeaturedNow(school.featured);
+
   return (
     <article className="mx-auto max-w-3xl">
       <script
@@ -235,6 +241,21 @@ export default async function SchoolPage({
       )}
 
       <div className="px-4 py-12">
+      {featuredNow && (
+        <div className="mb-8 rounded-xl border border-orange bg-orange-50 p-5">
+          <span className="inline-block rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-purple-dark">
+            Featured school
+          </span>
+          {school.featured?.offer && (
+            <p className="mt-2 font-heading text-lg font-bold text-purple-dark">
+              {school.featured.offer}
+            </p>
+          )}
+          <p className="mt-2 text-xs text-neutral-600">
+            This is a paid placement. Paying never changes what we write about a school.
+          </p>
+        </div>
+      )}
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
           <p className="text-xs uppercase tracking-wide text-neutral-400">Location</p>

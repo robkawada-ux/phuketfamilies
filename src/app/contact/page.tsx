@@ -166,6 +166,7 @@ export default function ContactPage() {
               </h3>
               <ul className="mt-3 space-y-1 text-sm text-neutral-600">
                 <li>✓ Featured school listing in the Phuket directory</li>
+                <li>✓ Featured camp in the Phuket holiday camps directory</li>
                 <li>✓ Sponsored articles, clearly labelled</li>
                 <li>✓ Bundles with {SISTER_SITE.name} and the Bangkok group</li>
               </ul>
