@@ -22,6 +22,7 @@ import RichText, { stripRichText } from "@/components/ui/RichText";
 const OG_CARDS = new Set<string>([
   "phuket-international-school-fees",
   "phuket-hospitals-for-families",
+  "christmas-holiday-camps-phuket-2026",
 ]);
 
 /** Generated card if there is one (it carries the headline), else the hero photo, else the blog default. */

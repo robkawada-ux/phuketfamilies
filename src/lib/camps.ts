@@ -184,7 +184,7 @@ export const CAMPS: Camp[] = [
         endDate: "2026-12-25",
         dateStatus: "confirmed",
         categories: ["nature-and-outdoors", "multi-activity"],
-        minAge: 7,
+        minAge: 6,
         maxAge: 13,
         format: "day",
         priceFrom: 15000,
