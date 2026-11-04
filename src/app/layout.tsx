@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/react";
-import { SITE, SITE_NAME } from "@/lib/seo";
+import { SITE, SITE_NAME, GA_MEASUREMENT_ID } from "@/lib/seo";
 
-// Google Analytics and the Search Console verification tag belong to
-// bkkfamilies.com and were removed on purpose. When phuketfamilies.com gets
-// its own GA4 property and Search Console property, add them back here
-// (gtag via next/script, and metadata.verification.google).
+// Google Analytics: phuketfamilies.com has its own GA4 property, set by
+// GA_MEASUREMENT_ID in lib/seo.ts. Search Console is verified by a DNS TXT
+// record, so no verification meta tag is needed here.
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -41,6 +41,22 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

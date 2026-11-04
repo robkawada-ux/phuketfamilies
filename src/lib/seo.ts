@@ -6,6 +6,12 @@ export const SITE_NAME = "Phuket Families";
 /** Sister site, linked from the footer and from articles where it helps the reader. */
 export const SISTER_SITE = { name: "BKK Families", city: "Bangkok", url: "https://www.bkkfamilies.com" };
 
+/**
+ * Google Analytics 4 measurement ID for phuketfamilies.com (its own property,
+ * not the bkkfamilies one). Empty string = no GA tag on the site.
+ */
+export const GA_MEASUREMENT_ID = "G-9RL91FWV3Q";
+
 /** Public contact inbox. Change here only. */
 export const CONTACT_EMAIL = "info@phuketfamilies.com";
 

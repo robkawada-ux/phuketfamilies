@@ -13,7 +13,7 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Live since 3 Nov 2026. One Vercel project, "phuketfamilies", holds www.phuketfamilies.com (production) and phuketfamilies.com (308 to www), plus phuketfamilies.vercel.app.
 - Namecheap DNS (BasicDNS): A @ 216.198.79.1 and CNAME www 2df3fdd195fdcf2b.vercel-dns-017.com. (Vercel's project-specific values). Namecheap's parking redirect was removed.
 - Google Search Console: Domain property for phuketfamilies.com, verified by a DNS TXT record in Namecheap (3 Nov 2026), so no verification meta tag is needed in `layout.tsx`.
-- TODO: GA4 property (add gtag in `layout.tsx`). The bkkfamilies GA and GSC tokens were deliberately removed.
+- Google Analytics 4: own property, measurement ID G-9RL91FWV3Q (4 Nov 2026), set in `GA_MEASUREMENT_ID` in `src/lib/seo.ts` and loaded in `layout.tsx` via next/script. The bkkfamilies GA and GSC tokens are not used here.
 - Contact email is the `CONTACT_EMAIL` constant in `src/lib/seo.ts`: info@phuketfamilies.com, a Namecheap email forwarder to robkawada@gmail.com (set up 3 Nov 2026, no catch-all on purpose).
 
 ## Brand
