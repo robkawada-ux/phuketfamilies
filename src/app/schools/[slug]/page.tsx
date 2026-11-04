@@ -239,7 +239,7 @@ export default async function SchoolPage({
         <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
           <p className="text-xs uppercase tracking-wide text-neutral-400">Location</p>
           <p className="text-sm font-semibold text-purple-dark">
-            {school.areas.map((a) => AREA_LABEL[a]).join(", ")}
+            {school.location ?? school.areas.map((a) => AREA_LABEL[a]).join(", ")}
           </p>
         </div>
         {school.ageRange && (

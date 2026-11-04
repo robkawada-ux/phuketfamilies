@@ -49,6 +49,12 @@ export interface School {
    */
   areas: Area[];
   /**
+   * Shown as the school's location instead of its area label, when the area
+   * label names places the school is not near (e.g. Oak Meadow asked us not
+   * to mention Koh Kaew). The directory still groups by `areas`.
+   */
+  location?: string;
+  /**
    * Held back until the school's license is verified. Pending schools are
    * left out of SCHOOLS, so they have no page, no directory card and no
    * sitemap entry. Delete the flag to publish.
@@ -148,10 +154,11 @@ const SCHOOL_ENTRIES: School[] = [
     budget: "under400k",
     website: "https://oakmeadow.ac.th",
     founded: 2007,
-    ageRange: "Ages 3 to 18",
+    location: "Wichit, Phuket Town",
+    ageRange: "Ages 2 to 18",
     languageOfInstruction: "English",
     feeRange: "231,000 to 408,240 THB/year",
-    description: "Founded in 2007, Oak Meadow International School teaches an American curriculum from kindergarten to Grade 12 on a large campus with lakes and woodland in Wichit, close to Phuket Town.\n\nIts core families are American families and anyone who wants a US high school diploma rather than A Levels or the IB, which makes it, with QSI, one of the two main American options on the island. The school runs its own buses from the main residential areas.\n\nOak Meadow sits in the middle of Phuket's fee range, below the big British and IB schools. Expect a one-off fee of around 50,000 THB on entry.",
+    description: "Founded in 2007, Oak Meadow International School teaches an American curriculum from its Nursery, which takes children from age 2, to Grade 12 on a large campus with lakes and woodland in Wichit, close to Phuket Town.\n\nIts core families are American families and anyone who wants a US high school diploma rather than A Levels or the IB, which makes it, with QSI, one of the two main American options on the island. The school runs its own buses from the main residential areas.\n\nOak Meadow sits in the middle of Phuket's fee range, below the big British and IB schools. Expect a one-off fee of around 50,000 THB on entry.",
   },
   {
     name: "Ruamrudee International School Phuket (RIS Phuket)",
