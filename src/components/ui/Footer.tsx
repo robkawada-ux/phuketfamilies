@@ -26,6 +26,7 @@ export default function Footer() {
               <li><Link href="/schools" className="hover:text-white">Schools</Link></li>
               <li><Link href="/healthcare" className="hover:text-white">Healthcare</Link></li>
               <li><Link href="/camps" className="hover:text-white">Holiday Camps</Link></li>
+              <li><Link href="/activities" className="hover:text-white">Things to Do</Link></li>
               <li><Link href="/blog" className="hover:text-white">Guides</Link></li>
               <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
             </ul>

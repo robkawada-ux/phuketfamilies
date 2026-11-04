@@ -4,6 +4,7 @@ import { ARTICLES } from "@/lib/articles";
 import { SITE } from "@/lib/seo";
 import { FACILITIES } from "@/lib/healthcare";
 import { CAMPS } from "@/lib/camps";
+import { ACTIVITIES } from "@/lib/activities";
 
 export const baseUrl = SITE;
 
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/healthcare/maternity`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/healthcare/paediatrics`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/camps`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/activities`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
     // The guides listing joins the sitemap once it has something in it.
     ...(ARTICLES.length > 0
@@ -50,5 +52,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...articlePages, ...schoolPages, ...healthcarePages, ...campPages];
+  const activityPages: MetadataRoute.Sitemap = ACTIVITIES.map((a) => ({
+    url: `${baseUrl}/activities/${a.slug}`,
+    lastModified: new Date(a.lastVerified),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticPages,
+    ...articlePages,
+    ...schoolPages,
+    ...healthcarePages,
+    ...campPages,
+    ...activityPages,
+  ];
 }

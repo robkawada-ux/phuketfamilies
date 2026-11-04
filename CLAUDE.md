@@ -27,12 +27,12 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - Articles take `heroImage` plus `heroAlt`. The share image prefers the generated card in `OG_CARDS` (it carries the headline) over the hero photo.
 
 ## Share images (Facebook previews), required on every page
-- Same rule as bkkfamilies: every page must emit an og:image. `og()` in `src/lib/seo.ts` attaches the nearest section card (`SECTION_CARDS`: the healthcare pages, /schools, /camps, /blog), falling back to the homepage card.
+- Same rule as bkkfamilies: every page must emit an og:image. `og()` in `src/lib/seo.ts` attaches the nearest section card (`SECTION_CARDS`: the healthcare pages, /schools, /camps, /activities, /blog), falling back to the homepage card.
 - Cards are 1200x630, deep teal with the road and palm. Articles without a hero image use `public/images/og/blog-default.png`.
 
 ## Site architecture
-- Live sections: home, /schools (directory + detail pages), /healthcare (hub, /hospitals directory + detail pages, /maternity, /paediatrics), /camps (directory + detail pages), /blog (titled "Guides"), /contact (incl. #advertise).
-- Removed from the Bangkok copy, to be rebuilt with Phuket data later: activities, playgroups, learning support, health insurance and school breaks. `schoolFees.ts` is kept with empty data because the school pages use its types and helpers. `schoolBreaks.ts` has no school calendars yet, but its `BREAK_WINDOWS` now hold the Phuket camp seasons.
+- Live sections: home, /schools (directory + detail pages), /healthcare (hub, /hospitals directory + detail pages, /maternity, /paediatrics), /camps (directory + detail pages), /activities (directory + detail pages), /blog (titled "Guides"), /contact (incl. #advertise).
+- Removed from the Bangkok copy, to be rebuilt with Phuket data later: playgroups, learning support, health insurance and school breaks. `schoolFees.ts` is kept with empty data because the school pages use its types and helpers. `schoolBreaks.ts` has no school calendars yet, but its `BREAK_WINDOWS` now hold the Phuket camp seasons.
 - Published guides (3 Nov 2026): `phuket-international-school-fees` (18 schools compared) and `phuket-hospitals-for-families`. Each has a share card in `public/images/og/blog/<slug>.png` registered in `OG_CARDS` in `src/app/blog/[slug]/page.tsx`. Update both articles when school fees or facility details change.
 - Articles are TypeScript objects in `src/lib/articles.ts` (see the Article interface). Body paragraphs support `[label](/path)` links and `**bold**` via RichText. Byline renders as "by Phuket Families".
 - Plan: cross-link articles between phuketfamilies.com and bkkfamilies.com where it genuinely helps the reader (a few links per article, editorial, not a link scheme).
@@ -65,4 +65,10 @@ Phuket Families is the Phuket sister site of BKK Families (bkkfamilies.com). It 
 - To sell one, add `featured: { from: "YYYY-MM-DD", until: "YYYY-MM-DD", offer?: "...", invoice?: "BEF-2026-0xx" }` to the school in `schools.ts` or the camp in `camps.ts`. Camps also take `windows: ["winter-2026", ...]` (the seasons paid for); only those weeks are featured. Dates are Bangkok time, `until` is inclusive. Logic in `src/lib/featured.ts`.
 - While running, the school or camp week shows first in its group with a "Featured" label, a coral border, the offer line, and (schools) the school's `photo` on the card; the detail page gets a "Featured school/camp" box saying it is a paid placement. A disclosure line appears under the result count whenever a featured item is visible. Paying never changes the description, fees or anything else.
 - /schools, /camps and their detail pages revalidate hourly (`export const revalidate = 3600`), so placements switch on and off by themselves without a redeploy. The directories take `today` from the server page so server and browser agree.
+
+## Activities directory (added 4 Nov 2026)
+- 22 listings in `src/lib/activities.ts` (14 days out, 8 weekly classes), same model and honesty rules as bkkfamilies: `status` "confirmed" only when read on the operator's own page (Bangtao Muay Thai kids BJJ, Sor Dejdamrong kids Muay Thai, Saltwater Dreaming), everything else "check" with its source. Prices omitted when not published or when sources disagree.
+- Phuket zones (north to south): Thalang and the north, Bang Tao and Cherngtalay, Patong and Kathu, Phuket Town, Kata and Karon, Chalong and Rawai, Several locations. Categories: Indoor play; Climbing, karts and adventure; Water parks; Aquariums and animals; Culture and views; Swimming and multi-sport; Football; Gymnastics and circus; Martial arts; Surfing.
+- Research notes, sources and what was left out (elephant sanctuaries, rugby, music and art) are in the claude.ai project doc `claude/phuket-activities.md`. Do not use phuketexpatguide.pages.dev or .com as a source: it has clear errors.
+- Nav now has 9 items (`lg:grid-cols-9`).
 
