@@ -33,6 +33,144 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: "where-to-live-in-phuket-with-kids",
+    title: "Where to Live in Phuket with Kids: Areas, Schools and Rents (2026)",
+    category: "Living in Phuket",
+    date: "2026-11-05",
+    excerpt:
+      "The five areas where families on Phuket actually live, with the international schools in each, the nearest hospitals, what a family villa costs to rent and where the traffic bites.",
+    metaDescription:
+      "Where to live in Phuket with kids: Cherngtalay and Bang Tao, Thalang, Phuket Town, Kathu and Chalong and Rawai compared on schools, hospitals, rents and traffic, with 2026 villa rents.",
+    keywords: [
+      "where to live in phuket with kids",
+      "best area to live in phuket for families",
+      "phuket family neighbourhoods",
+      "rent villa phuket family",
+      "living in phuket with children",
+      "bang tao vs rawai families",
+      "moving to phuket with kids",
+    ],
+    headings: [
+      { beforeParagraph: 1, text: "Start with the school" },
+      { beforeParagraph: 3, text: "Cherngtalay, Bang Tao and Laguna" },
+      { beforeParagraph: 5, text: "Thalang and the north" },
+      { beforeParagraph: 7, text: "Phuket Town, Wichit and Koh Kaew" },
+      { beforeParagraph: 9, text: "Kathu and Patong" },
+      { beforeParagraph: 10, text: "Chalong, Rawai and Nai Harn" },
+      { beforeParagraph: 12, text: "Before you sign a lease" },
+    ],
+    body: [
+      "Phuket is a small island, but where you live decides how long the school run takes, how far you are from a hospital and what you pay in rent. This guide goes through the five areas where families actually live, with the international schools in each one, the nearest hospitals and clinics, what a family home costs to rent and what the traffic is like. Rents are Phuket 101's figures for twelve-month furnished leases in October 2026. School details come from our [schools directory](/schools).",
+      "Most families choose the school first and then look for a home nearby, and on Phuket that order matters. The main north to south road, Thepkasattri Road, runs through two well-known bottlenecks: the **Heroines Monument** roundabout in Thalang, which the local traffic police call the worst on the island, and the **Koh Kaew intersection** near BISP, where police control U-turns from 7 to 9am and 4 to 6pm because it jams at school drop-off. Cherngtalay on the west coast has rush-hour queues of its own. Living on the far side of one of these from your school can turn a short drive into a long one.",
+      "Of the 18 international schools in our directory, eight are in Chalong and Rawai in the south, four are in and around Phuket Town, three are in Thalang in the north, two are in Kathu and two are on the west coast in Cherngtalay (HeadStart has campuses in both Phuket Town and Cherngtalay). The island's main hospitals are all in or near Phuket Town.",
+      "The west coast around Bang Tao Beach is the most expensive place to live on the island and the one newcomers hear about first, with the Laguna resort complex, Boat Avenue and Porto de Phuket for shopping, and Blue Tree for the kids. Phuket 101 puts a **three-bedroom pool villa at 60,000 to 150,000 baht a month in Bang Tao and Laguna**, and 70,000 to 200,000 baht or more in Surin and Cherngtalay, with homes inside Laguna at the top of the range.",
+      "Schools on this side are [HeadStart's Cherngtalay campus](/schools/headstart-international-school), which goes up to Year 9 before students move to the Chaofah campus near Phuket Town, and the small nature-based [Bamboo Valley](/schools/bamboo-valley-phuket). [UWC Thailand](/schools/uwc-thailand-international-school) and [Glenalmond](/schools/glenalmond-phuket-international-school) are the nearest larger schools, inland on Thepkasattri Road, and North London Collegiate School plans to open a campus in the Bang Tao and Cherngtalay area in 2028. Bangkok Phuket Clinic has branches in [Laguna](/healthcare/hospitals/bangkok-phuket-clinic-laguna) and [Kamala](/healthcare/hospitals/bangkok-phuket-clinic-kamala), but the hospitals are in Phuket Town. For the kids there is [Adventure Village](/activities/adventure-village-blue-tree), [REBEL Rock Climbing](/activities/rebel-rock-climbing), [kids BJJ](/activities/bangtao-muay-thai-kids-bjj) and [surf lessons](/activities/saltwater-dreaming-surf-school) on Bang Tao Beach in the surf season.",
+      "Inland Thalang, between the airport and the Heroines Monument, is quieter, greener and much cheaper. Phuket 101 counts inland Thalang among its budget areas, where a **three-bedroom pool villa runs 35,000 to 55,000 baht a month**. It is home to [UWC Thailand](/schools/uwc-thailand-international-school), [Glenalmond Phuket](/schools/glenalmond-phuket-international-school), which opened in August 2026 inside Thanyapura, and [Life School](/schools/life-school-phuket) in Si Sunthon, as well as [Thanyapura](/activities/thanyapura-junior-development-program) itself for swimming, tennis and holiday camps.",
+      "The trade-off is the drive to the hospitals in Phuket Town, through the Heroines Monument. Bangkok Phuket Clinic has a branch in [Srisunthon](/healthcare/hospitals/bangkok-phuket-clinic-srisunthon), and Bumrungrad International Hospital is building a hospital at Mai Khao in the far north, now scheduled for the third quarter of 2027. Being close to the airport is a real plus for families who fly back and forth to Bangkok.",
+      "Phuket Town and the suburbs around it are the practical choice: the lowest rents on the island, the big shopping malls, and every main hospital close by, including [Bangkok Hospital Phuket](/healthcare/hospitals/bangkok-hospital-phuket) and [Bangkok Hospital Siriroj](/healthcare/hospitals/bangkok-hospital-siriroj), both with children's clinics open into the evening. Phuket 101 puts a **three-bedroom pool villa at 30,000 to 55,000 baht a month** here, with townhouses from 15,000 baht.",
+      "Schools here include [BISP](/schools/british-international-school-phuket) in Koh Kaew, [HeadStart's Chaofah campus](/schools/headstart-international-school), [Oak Meadow](/schools/oak-meadow-international-school) in Wichit and [Finnway](/schools/finnway-international-school-phuket) near Boat Lagoon. For weekends there is [Aquaria](/activities/aquaria-phuket) under Central Phuket Floresta, the [Ice Arena](/activities/ice-arena-phuket) at Boat Lagoon, [Formula Fun Karting](/activities/formula-fun-karting) and the [Old Town and its Sunday Walking Street](/activities/phuket-old-town-walking-street). The catch is the distance to the beaches, and the Koh Kaew intersection at school time if you live on the wrong side of it.",
+      "Kathu sits in the valley between Phuket Town and Patong, with two of the island's more affordable schools, [Kajonkiet (KISP)](/schools/kajonkiet-international-school-phuket) and [QSI](/schools/qsi-international-school-of-phuket). Phuket 101 doesn't give Kathu rents separately. Patong itself is built around tourism and nightlife, so families who want to be on this side of the island usually live in Kathu; in Patong a three-bedroom pool villa runs 50,000 to 100,000 baht a month. Kathu is close to [Andamanda](/activities/andamanda-phuket), [Phuket Wake Park](/activities/phuket-wake-park) and [Flying Hanuman](/activities/flying-hanuman), and [Patong Hospital](/healthcare/hospitals/patong-hospital) has a 24-hour emergency room.",
+      "The south has the most schools and a large, settled expat community. Eight of the 18 schools in our directory are here: [BCIS](/schools/bcis-international-school-phuket), [RIS Phuket](/schools/ruamrudee-international-school-phuket), [Lighthouse](/schools/lighthouse-international-school-phuket), [PGIS](/schools/prasan-gateway-international-school), [Montessori House](/schools/montessori-house-phuket-international-school), [École Française Jean de La Fontaine](/schools/ecole-francaise-jean-de-la-fontaine), [ISP](/schools/international-school-of-phuket) and [Buds](/schools/buds-international-school-phuket). Chalong is the cheaper half, with **three-bedroom pool villas at 38,000 to 70,000 baht a month**, against 45,000 to 90,000 baht in Rawai and Nai Harn, which are closer to the beaches.",
+      "Bangkok Phuket Clinic has a branch in [Rawai](/healthcare/hospitals/bangkok-phuket-clinic-rawai), but the hospitals are in Phuket Town. Weekends mean Nai Harn and Rawai beaches, the [Big Buddha](/activities/big-buddha-phuket) and boat trips from Chalong Pier. Kata and Karon, over the hill to the west, are mostly holiday towns, with pool villas at 45,000 to 85,000 baht a month, though some families do live there and ISP's school bus covers both.",
+      "Phuket 101's advice is to rent by the month for two or three months first, ideally in two different areas, before signing a year's lease. A twelve-month lease signed in the low season also locks in the lower low-season rent for the whole year.",
+      "Budget for a pool villa's running costs as well as the rent. Phuket 101 estimates electricity for a three-bedroom pool villa at 3,500 to 6,500 baht a month with sensible air conditioning, and several times that with it running all day. Pool cleaning and a gardener are often included in a villa lease, but not always, so ask. Most listings we looked at ask for a two-month deposit plus the first month's rent in advance.",
+      "If you are thinking of buying rather than renting, our Bangkok site has a guide to [what foreigners can and cannot own in Thailand](https://www.bkkfamilies.com/blog/foreign-property-ownership-thailand-2026). School fees usually outweigh the rent, so see our [Phuket school fees guide](/blog/phuket-international-school-fees) too, and if you are weighing boarding instead of a move, our guide to [boarding schools in Phuket for Bangkok families](/blog/boarding-schools-phuket-bangkok-families).",
+    ],
+    faq: [
+      {
+        question: "Which part of Phuket is best for families?",
+        answer:
+          "It depends on the school, because traffic at the Heroines Monument and Koh Kaew makes long school runs painful. The south (Chalong and Rawai) has the most international schools and mid-range rents, Phuket Town is the cheapest and closest to the hospitals, inland Thalang is quiet and near UWC and the airport, and Bang Tao and Laguna are the most expensive, with the most resort-style facilities.",
+      },
+      {
+        question: "How much does it cost to rent a family home in Phuket?",
+        answer:
+          "By Phuket 101's October 2026 figures for twelve-month leases, a three-bedroom pool villa costs about 30,000 to 55,000 baht a month in Phuket Town, 38,000 to 70,000 in Chalong, 45,000 to 90,000 in Rawai and Nai Harn, and 60,000 to 150,000 in Bang Tao and Laguna. Electricity for a pool villa adds roughly 3,500 to 6,500 baht a month.",
+      },
+      {
+        question: "Where are the hospitals in Phuket?",
+        answer:
+          "The main hospitals, Bangkok Hospital Phuket, Bangkok Hospital Siriroj, Mission Hospital and Vachira Phuket Hospital, are all in or near Phuket Town. Patong Hospital has a 24-hour emergency room, and Bangkok Phuket Clinic has branches in Laguna, Kamala, Rawai and Srisunthon. See [where to take a sick child in Phuket](/healthcare/paediatrics).",
+      },
+      {
+        question: "Which area has the most international schools?",
+        answer:
+          "Chalong and Rawai in the south, with eight of the 18 schools in our [directory](/schools). Phuket Town and Koh Kaew have four, including BISP.",
+      },
+    ],
+    relatedSchools: [
+      { name: "British International School, Phuket (BISP)", slug: "british-international-school-phuket" },
+      { name: "UWC Thailand International School", slug: "uwc-thailand-international-school" },
+      { name: "HeadStart International School", slug: "headstart-international-school" },
+      { name: "BCIS International School Phuket", slug: "bcis-international-school-phuket" },
+    ],
+  },
+  {
+    slug: "boarding-schools-phuket-bangkok-families",
+    title: "Boarding Schools in Phuket for Bangkok Families: BISP and UWC (2026/27)",
+    category: "Schools",
+    date: "2026-11-05",
+    excerpt:
+      "Only two Phuket schools take boarders. What BISP and UWC Thailand offer, from what age, what boarding costs in 2026/27, and what Bangkok parents should ask before applying.",
+    metaDescription:
+      "Boarding schools in Phuket for Bangkok families: BISP (from Year 4) and UWC Thailand (Grades 9 to 12) compared, with 2026/27 boarding and tuition fees, summer camps to try first and questions to ask.",
+    keywords: [
+      "boarding school phuket",
+      "bisp boarding fees",
+      "uwc thailand boarding",
+      "boarding school thailand for bangkok families",
+      "phuket boarding school fees 2026",
+      "international boarding school phuket",
+    ],
+    headings: [
+      { beforeParagraph: 1, text: "BISP: boarding from age 8" },
+      { beforeParagraph: 4, text: "UWC Thailand: boarding from Grade 9" },
+      { beforeParagraph: 7, text: "Weekly or full boarding from Bangkok?" },
+      { beforeParagraph: 8, text: "Try a summer camp first" },
+      { beforeParagraph: 9, text: "Questions to ask before you apply" },
+    ],
+    body: [
+      "Two international schools in Phuket take boarders: the British International School, Phuket (BISP) in Koh Kaew and UWC Thailand in Thalang. From Bangkok they are a flight of about an hour and a half, with many flights a day from both Suvarnabhumi and Don Mueang, which makes them a realistic option for Bangkok families who want boarding without sending a child to the UK. This guide compares the two, with the 2026/27 fees and the questions worth asking before you apply.",
+      "[BISP](/schools/british-international-school-phuket) is the island's largest school, founded in 1996 on a 44-acre campus, and the only one on Phuket offering both A Levels and the IB Diploma. It takes **boarders from Year 4 (age 8) to Year 13**, either weekly or full, and one school directory puts the number of boarders at about 120. Its boarding houses are staffed by full-time house parents with assistants and matrons.",
+      "BISP publishes its 2026/27 fees in full, and boarding is charged on top of tuition. **Weekly boarding** costs 396,400 baht a year for Years 4 to 6 and 457,800 baht for Years 7 to 13. **Full boarding** costs 473,550 baht for Years 4 to 6 and 509,300 baht for Years 7 to 13. Tuition runs from 755,900 baht in Year 4 to 982,700 baht in Years 9, 10 and 12, so a full boarder in Year 9 costs about **1.49 million baht a year** in tuition and boarding together.",
+      "New families also pay a 6,000 baht application fee, a placement fee of 200,000 baht (250,000 baht for a family with more than one child) and a refundable 150,000 baht bond. For children whose English needs work, BISP runs an Intensive English Course in Years 7 and 8, charged at 63,000 baht in the first term and 42,000 baht in each of the next two.",
+      "[UWC Thailand](/schools/uwc-thailand-international-school) is a non-profit IB school (Primary Years, Middle Years and Diploma) next to Thanyapura in Thalang, part of the worldwide UWC movement, with mindfulness and outdoor education built into school life. **Boarding is for Grades 9 to 12 only.** Boarders live in two houses on campus with houseparents and can use Thanyapura's pool and sports facilities. The school also offers day boarding, where students stay for meals, study and evening activities until 9pm.",
+      "UWC publishes its 2026/27 fees as an image and a PDF rather than page text. A school directory gives the boarding fee as 633,000 baht a year for 2025/26, alongside tuition of 845,000 baht for Grades 6 to 10 and 904,000 baht for Grades 11 and 12, so expect 2026/27 to be a little higher and ask admissions for the current figure. Students applying for the IB Diploma can also apply through their national UWC committee, which offers need-based scholarships.",
+      "UWC boarders go home on long weekends when staff have training days, and the school expects them to arrive on time and stay through the full term, which is worth knowing when you book flights.",
+      "Weekly boarding means coming home every weekend, which from Bangkok means two flights a week, so most Bangkok families will be looking at full boarding. If one parent can spend part of the year in Phuket, weekly boarding at BISP or day boarding at UWC gives more flexibility, and our guide to [where to live in Phuket with kids](/blog/where-to-live-in-phuket-with-kids) covers the areas near each school.",
+      "Both schools run residential summer camps, an easy way to see how a child copes with boarding before you commit. In 2026 [Summer@BISP's Full Camp](/camps/summer-at-bisp) took boarders aged 10 to 15 for 29,400 baht a week, and [UWC's Residential Camp](/camps/uwc-thailand-holiday-camps) took ages 12 to 18 for 36,500 baht a week. The 2027 dates aren't out yet, and we'll add them to the [camps directory](/camps) as soon as they are.",
+      "Ask each school how weekends work for full boarders, which weekends and holidays students must go home, whether staff take students to and from the airport, and whether a local guardian is required. Airlines set their own rules for children flying alone, and many charge for an unaccompanied minor service, so check those before you plan regular flights.",
+      "It is also worth asking how the boarding staff handle illness and who takes a child to hospital. Phuket's private hospitals are covered in our [Phuket hospitals guide](/blog/phuket-hospitals-for-families), including children's clinic hours.",
+      "To compare boarding in Phuket with staying in Bangkok, our Bangkok site has a guide to [what international school really costs in Bangkok](https://www.bkkfamilies.com/blog/what-does-international-school-actually-cost-bangkok-2026), and our [Phuket school fees guide](/blog/phuket-international-school-fees) covers every day school on the island.",
+    ],
+    faq: [
+      {
+        question: "Which schools in Phuket offer boarding?",
+        answer:
+          "Two: [BISP](/schools/british-international-school-phuket), for Years 4 to 13, and [UWC Thailand](/schools/uwc-thailand-international-school), for Grades 9 to 12. The other international schools on the island are day schools.",
+      },
+      {
+        question: "How much does boarding at BISP cost in 2026/27?",
+        answer:
+          "On top of tuition, weekly boarding is 396,400 baht a year for Years 4 to 6 and 457,800 baht for Years 7 to 13, and full boarding is 473,550 baht and 509,300 baht. With tuition, a full boarder in Year 9 costs about 1.49 million baht a year, plus one-off admission fees.",
+      },
+      {
+        question: "What is the youngest age for boarding in Phuket?",
+        answer:
+          "BISP takes boarders from Year 4, which is age 8. UWC Thailand only boards students from Grade 9, around age 14.",
+      },
+      {
+        question: "Can my child try boarding before we commit?",
+        answer:
+          "Yes. Both schools run residential summer camps: in 2026 BISP's Full Camp took ages 10 to 15 and UWC's Residential Camp took ages 12 to 18. See the [camps directory](/camps) for details.",
+      },
+    ],
+    relatedSchools: [
+      { name: "British International School, Phuket (BISP)", slug: "british-international-school-phuket" },
+      { name: "UWC Thailand International School", slug: "uwc-thailand-international-school" },
+    ],
+  },
+  {
     slug: "christmas-holiday-camps-phuket-2026",
     title: "Christmas Holiday Camps in Phuket 2026: Dates, Ages and Prices",
     category: "Camps",
@@ -151,12 +289,12 @@ export const ARTICLES: Article[] = [
       "Tuition is only part of the bill. Most schools charge a one-off fee when your child joins, and the two most expensive British schools add a refundable bond as well.",
       "BISP charges a placement fee of 200,000 baht (250,000 for a family with more than one child) plus a 150,000 baht refundable bond. Glenalmond charges a 200,000 baht placement fee (100,000 for siblings) plus a 150,000 baht refundable deposit. HeadStart's joining fee is around 100,000 baht, BCIS around 75,000, Kajonkiet around 60,000, Oak Meadow around 50,000, Montessori House around 45,000 and Lighthouse around 40,000. UWC Thailand charges an entrance fee and a development fund contribution, and QSI adds an annual capital fund fee for secondary students.",
       "So at BISP or Glenalmond, the placement fee and bond alone add 350,000 baht to the first year. Then budget for the extras that rarely appear in a fee table: buses, uniforms, lunches, exam fees, trips and after-school activities.",
-      "Phuket is bigger than it looks on a map, and most school runs are by car or school bus, so most families choose a school and a home together. Our directory groups the schools into five areas.",
+      "Phuket is bigger than it looks on a map, and most school runs are by car or school bus, so most families choose a school and a home together. Our directory groups the schools into five areas, and our guide to [where to live in Phuket with kids](/blog/where-to-live-in-phuket-with-kids) compares them on rents, hospitals and traffic.",
       "**The south (Chalong and Rawai)** has the most choice, with eight schools: BCIS, RIS, Lighthouse, PGIS, Montessori House, École Française, ISP and Buds. **Phuket Town, Wichit and Koh Kaew** has BISP, HeadStart's main campus, Oak Meadow and Finnway. **Kathu**, between Phuket Town and Patong, has Kajonkiet and QSI. **The north**, around Thalang, has UWC Thailand, Glenalmond and Life School. **The west coast** around Cherngtalay and Bangtao has Bamboo Valley and HeadStart's newer campus.",
       "Several schools run buses, BCIS, Oak Meadow and ISP among them, so ask about routes before you rule out a school that looks far away. The [map on our schools page](/schools) shows where each one is.",
       "Not every school runs to age 18. Buds stops at the end of primary, Finnway has just added Grade 7, ISP stops at around age 14 and RIS Phuket at Grade 8 for now. PGIS currently runs to lower secondary, and Glenalmond is starting with the early years and primary. Bamboo Valley takes children through the primary years. If your children are young this may not matter yet, but it is worth knowing which school they would move on to.",
       "The schools that currently teach right through to the final year of secondary are BISP, UWC Thailand, HeadStart, BCIS, Kajonkiet, QSI, Oak Meadow, Lighthouse and Life School.",
-      "Only two schools on Phuket take boarders: BISP, with weekly and full boarding from Year 4, and UWC Thailand. That is one reason both draw students from the mainland and overseas.",
+      "Only two schools on Phuket take boarders: BISP, with weekly and full boarding from Year 4, and UWC Thailand. That is one reason both draw students from the mainland and overseas. Our [boarding guide](/blog/boarding-schools-phuket-bangkok-families) compares the two, with 2026/27 boarding fees.",
       "If you are deciding between Phuket and Bangkok, our sister site [BKK Families](https://www.bkkfamilies.com/schools) has the same kind of directory for Bangkok's international schools. Bangkok has far more schools at every price point, while Phuket's choice narrows in the senior years.",
       "Run a school in Phuket and spotted something out of date? [Let us know](/contact) and we will update your listing. Listings are free.",
     ],

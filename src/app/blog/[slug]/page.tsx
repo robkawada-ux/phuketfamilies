@@ -23,6 +23,8 @@ const OG_CARDS = new Set<string>([
   "phuket-international-school-fees",
   "phuket-hospitals-for-families",
   "christmas-holiday-camps-phuket-2026",
+  "where-to-live-in-phuket-with-kids",
+  "boarding-schools-phuket-bangkok-families",
 ]);
 
 /** Generated card if there is one (it carries the headline), else the hero photo, else the blog default. */
