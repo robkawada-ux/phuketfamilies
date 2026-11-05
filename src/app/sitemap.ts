@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/healthcare/maternity`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/healthcare/paediatrics`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/camps`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/school-breaks`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/activities`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
     // The guides listing joins the sitemap once it has something in it.

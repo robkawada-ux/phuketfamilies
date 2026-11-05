@@ -108,7 +108,12 @@ export default function CampsPage() {
             So this directory is built around dates. Every entry is one camp
             week: when it runs, who it is for, what it costs and where.
             Filter by the holiday you need and your child&rsquo;s age, and
-            you should have a shortlist in about thirty seconds.
+            you should have a shortlist in about thirty seconds. Not sure
+            when your school breaks? Check our{" "}
+            <Link href="/school-breaks" className="font-semibold text-orange">
+              Phuket school term dates
+            </Link>
+            .
           </p>
           <p>
             Nobody pays to be listed here, and the few paid featured placements

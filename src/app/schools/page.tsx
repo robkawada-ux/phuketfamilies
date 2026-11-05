@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { og } from "@/lib/seo";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import SchoolDirectory from "@/components/ui/SchoolDirectory";
 import { SCHOOLS } from "@/lib/schools";
@@ -60,6 +61,13 @@ export default function SchoolsPage() {
       />
       <div className="mx-auto max-w-6xl px-4 py-12">
         <SchoolDirectory today={todayInBangkok()} />
+        <p className="mt-10 text-center text-sm text-neutral-600">
+          Planning around the school year? See{" "}
+          <Link href="/school-breaks" className="font-semibold text-orange">
+            Phuket school term dates and holidays 2026/27
+          </Link>
+          .
+        </p>
       </div>
     </>
   );
