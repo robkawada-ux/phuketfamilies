@@ -74,7 +74,7 @@ export const BREAK_WINDOWS: BreakWindow[] = [
     start: "2027-02-08",
     end: "2027-02-19",
     summary:
-      "Most February camps on the island run 15 to 19 February. Thanyapura also runs the week before, 8 to 12 February, which covers Chinese New Year. Check your own school's half term before booking.",
+      "Most February camps on the island run 15 to 19 February. Thanyapura also runs the two weeks before, 1 to 5 February and 8 to 12 February, the second of which covers Chinese New Year. Check your own school's half term before booking.",
   },
   {
     id: "other-2027",

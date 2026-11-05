@@ -313,10 +313,10 @@ export const CAMPS: Camp[] = [
     description:
       "Thanyapura is the sports resort in Thalang with an Olympic-size pool and tennis courts, and its Future Stars Holiday Camp runs in every school break for ages 5 to 16, open to all levels from beginners up. The full day is swimming in the morning, lunch, tennis in the afternoon and a fitness session to finish, from 9am to 4pm. A half-day option is swimming only, 9am to 1:30pm, including lunch.",
     worthKnowing:
-      "Thanyapura publishes a whole year of camp dates in advance, including two February weeks, one of them over Chinese New Year. Its page gives the 2027 dates without the year, but the weekdays only fit 2027. Single days can be booked as drop-ins, at 3,200 baht for a full day or 2,300 baht for a half day. The registration form's age list starts at 4, while the camp says 5 to 16, so confirm first if your child is 4.",
+      "Thanyapura publishes a whole year of camp dates in advance, including three February weeks, one of them over Chinese New Year. Its page gives the 2027 dates without the year, but the weekdays only fit 2027. Single days can be booked as drop-ins, at 3,200 baht for a full day or 2,300 baht for a half day. Thanyapura confirmed in November 2026 that the camp is for ages 5 to 16. Its registration form still lists age 4, which it is checking, so ask first if your child is 4.",
     website: "https://www.thanyapura-phuket.com/promotion/future-star-holiday-camp/",
     phone: "076 336 000, or WhatsApp 089 973 9551",
-    lastVerified: "2026-11-03",
+    lastVerified: "2026-11-05",
     sessions: [
       {
         id: "thanyapura-winter-2026-full",
@@ -334,7 +334,8 @@ export const CAMPS: Camp[] = [
         hours: "9am to 4pm",
         minimumBooking: "1 day, at 3,200 baht",
         lunchIncluded: true,
-        lastVerified: "2026-11-03",
+        note: "Three weekly sessions: 21 to 25 December, 28 December to 1 January, and 4 to 8 January.",
+        lastVerified: "2026-11-05",
       },
       {
         id: "thanyapura-winter-2026-half",
@@ -352,13 +353,14 @@ export const CAMPS: Camp[] = [
         hours: "9am to 1:30pm",
         minimumBooking: "1 day, at 2,300 baht",
         lunchIncluded: true,
-        lastVerified: "2026-11-03",
+        note: "Three weekly sessions: 21 to 25 December, 28 December to 1 January, and 4 to 8 January.",
+        lastVerified: "2026-11-05",
       },
       {
         id: "thanyapura-feb-2027-full",
         programme: "Future Stars, full day (swim and tennis)",
         window: "spring-2027",
-        startDate: "2027-02-08",
+        startDate: "2027-02-01",
         endDate: "2027-02-19",
         dateStatus: "confirmed",
         categories: ["swimming", "sport-and-fitness"],
@@ -370,14 +372,14 @@ export const CAMPS: Camp[] = [
         hours: "9am to 4pm",
         minimumBooking: "1 day, at 3,200 baht",
         lunchIncluded: true,
-        note: "Two separate weeks: 8 to 12 February (Chinese New Year week) and 15 to 19 February.",
-        lastVerified: "2026-11-03",
+        note: "Three separate weeks: 1 to 5 February, 8 to 12 February (Chinese New Year week) and 15 to 19 February.",
+        lastVerified: "2026-11-05",
       },
       {
         id: "thanyapura-feb-2027-half",
         programme: "Future Stars, half day (swim)",
         window: "spring-2027",
-        startDate: "2027-02-08",
+        startDate: "2027-02-01",
         endDate: "2027-02-19",
         dateStatus: "confirmed",
         categories: ["swimming"],
@@ -389,8 +391,8 @@ export const CAMPS: Camp[] = [
         hours: "9am to 1:30pm",
         minimumBooking: "1 day, at 2,300 baht",
         lunchIncluded: true,
-        note: "Two separate weeks: 8 to 12 February (Chinese New Year week) and 15 to 19 February.",
-        lastVerified: "2026-11-03",
+        note: "Three separate weeks: 1 to 5 February, 8 to 12 February (Chinese New Year week) and 15 to 19 February.",
+        lastVerified: "2026-11-05",
       },
       {
         id: "thanyapura-apr-2027-full",
