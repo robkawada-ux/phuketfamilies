@@ -63,7 +63,7 @@ export const SCHOOL_CALENDARS: SchoolCalendar[] = [
       "BISP's calendar gives each break with the weekends either side. The first and last days of the school year are only marked on the calendar grid, which we could not read reliably, so they are not shown.",
   },
   {
-    name: "BCIS International School Phuket (Berda Claude)",
+    name: "BCIS International School of Phuket",
     schoolSlug: "bcis-international-school-phuket",
     style: "british",
     sourceUrl: "https://www.bcisphuket.ac.th/calendar",

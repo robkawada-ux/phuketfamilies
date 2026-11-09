@@ -102,7 +102,7 @@ export const ARTICLES: Article[] = [
       { name: "British International School, Phuket (BISP)", slug: "british-international-school-phuket" },
       { name: "UWC Thailand International School", slug: "uwc-thailand-international-school" },
       { name: "HeadStart International School", slug: "headstart-international-school" },
-      { name: "BCIS International School Phuket", slug: "bcis-international-school-phuket" },
+      { name: "BCIS International School of Phuket", slug: "bcis-international-school-phuket" },
     ],
   },
   {
@@ -272,7 +272,7 @@ export const ARTICLES: Article[] = [
       "**[Glenalmond Phuket](/schools/glenalmond-phuket-international-school)**: 490,000 to 750,000 baht a year. Brand new in August 2026, inside the Thanyapura resort in Thalang, in partnership with Glenalmond College in Scotland. It is starting with the early years and primary, with secondary year groups to follow.",
       "Six schools top out between roughly 400,000 and 550,000 baht. This is where most of the island's British and American options sit.",
       "**[HeadStart International School](/schools/headstart-international-school)**: 347,000 to 540,000 baht a year. One of the biggest British schools on Phuket, with around 1,500 students on campuses in Wichit and Cherngtalay, and the only school on the island offering IGCSEs, A Levels and BTECs.",
-      "**[BCIS International School Phuket](/schools/bcis-international-school-phuket)**: 302,000 to 502,500 baht a year. The British Cambridge pathway and the French national programme on one campus in Chalong, with around 400 students from roughly 60 nationalities.",
+      "**[BCIS International School of Phuket](/schools/bcis-international-school-phuket)**: 302,000 to 502,500 baht a year. The British Cambridge pathway and the French national programme on one campus in Chalong, with around 400 students from roughly 60 nationalities.",
       "**[Kajonkiet International School Phuket](/schools/kajonkiet-international-school-phuket)**: 200,000 to 454,000 baht a year. A full British pathway to A Level in the Kathu valley at fees well below BISP and HeadStart, and central enough for an easy school run from most of the island.",
       "**[QSI International School of Phuket](/schools/qsi-international-school-of-phuket)**: about 194,000 to 452,745 baht a year. A small non-profit American school in Kathu with Advanced Placement courses. Fees are set in US dollars, so the baht figure moves with the exchange rate.",
       "**[Finnway International School](/schools/finnway-international-school-phuket)**: 295,000 to 447,000 baht a year. A Finnish-model school in Koh Kaew for children aged 2 to 13, which added Grade 7 in August 2026, with classes of around 15.",

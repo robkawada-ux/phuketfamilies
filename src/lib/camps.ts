@@ -983,7 +983,7 @@ export const CAMPS: Camp[] = [
         priceFrom: 17000,
         priceTo: 18500,
         priceUnit: "per-week",
-        venue: "BCIS International School Phuket, Chalong",
+        venue: "BCIS International School of Phuket, Chalong",
         hours: "9am to 3pm",
         note: "17,000 baht early bird, 18,500 baht regular.",
         lastVerified: "2026-11-03",
