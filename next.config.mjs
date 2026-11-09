@@ -79,6 +79,10 @@ const legacyRedirects = [
   { source: "/category/:slug*", destination: "/blog" },
 ];
 
+// Phuket listings taken down. Bangtao Muay Thai & MMA told us on 9 Nov 2026
+// that it does not run children's classes yet.
+legacyRedirects.push({ source: "/activities/bangtao-muay-thai-kids-bjj", destination: "/activities" });
+
 const nextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],

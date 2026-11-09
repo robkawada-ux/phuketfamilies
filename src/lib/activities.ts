@@ -483,31 +483,6 @@ export const ACTIVITIES: Activity[] = [
     lastVerified: "2026-11-04",
   },
   {
-    slug: "bangtao-muay-thai-kids-bjj",
-    name: "Kids BJJ at Bangtao Muay Thai & MMA",
-    type: "Weekly class",
-    category: "Martial arts",
-    district: "Bang Tao",
-    zone: "Bang Tao and Cherngtalay",
-    minAge: 4,
-    maxAge: 16,
-    hours:
-      "Kids (4 to 5) 9.30 to 10.30am or 4.30 to 5.30pm, Juniors (6 to 8) 10 to 11am or 5 to 6pm, Youth (9 and up) 5 to 6pm. Check which days each group runs.",
-    price: {
-      from: 500,
-      unit: "session",
-      note: "500 baht drop-in, 1,400 baht a week, 5,000 baht a month or 13,500 baht for three months. A second child gets 15% off and a third 30% off.",
-    },
-    description:
-      "Brazilian Jiu-Jitsu classes for children at a Bang Tao gym. BJJ is a grappling sport with no strikes, so it suits children who want a martial art without punches and kicks. The youngest groups do 30 minutes of BJJ followed by 30 minutes of supervised play.",
-    worthKnowing:
-      "The gym's page gives slightly different age bands in different places, so confirm the right group when you book.",
-    website: "https://bangtaomuaythai.com/kids-bjj-classes-at-bangtao-muay-thai-amp-mma-phuket",
-    status: "confirmed",
-    sourceUrl: "https://bangtaomuaythai.com/kids-bjj-classes-at-bangtao-muay-thai-amp-mma-phuket",
-    lastVerified: "2026-11-04",
-  },
-  {
     slug: "sor-dejdamrong-kids-muay-thai",
     name: "Kids Muay Thai at Sor Dejdamrong",
     type: "Weekly class",
