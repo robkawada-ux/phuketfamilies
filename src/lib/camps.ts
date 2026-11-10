@@ -779,6 +779,42 @@ export const CAMPS: Camp[] = [
     ],
   },
   {
+    slug: "glenalmond-phuket-christmas-camp",
+    name: "Glenalmond Phuket Christmas Holiday Camp",
+    area: "Thalang",
+    mainVenue: "Glenalmond Phuket International School, Thanyapura, 120/1 Moo 7, Thepkrasattri, Thalang",
+    description:
+      "Glenalmond Phuket, the new British primary school inside the Thanyapura Sports and Health Resort, runs a one-week Christmas Holiday Camp for ages 5 to 11. The week mixes English activities to build confidence in speaking, reading and communication, creative projects and teamwork, sport including football, swimming and tennis, and a Christmas celebration with festive games and certificates at the end.",
+    worthKnowing:
+      "The school's brochure gives the dates, ages and price but not the daily hours, whether lunch is included or whether the camp is open to children from other schools, so ask when you book. Thanyapura's own Future Stars swim and tennis camp runs on the same resort from 21 December, the week after.",
+    email: "admissions@glenalmondphuket.com",
+    phone: "061 324 9155",
+    highlights: [
+      "📚 English adventure: speaking, reading and communication",
+      "🧩 Creative activities and teamwork",
+      "⚽ Football, swimming and tennis",
+      "🎅 Christmas celebration with festive games and certificates",
+    ],
+    lastVerified: "2026-11-10",
+    sessions: [
+      {
+        id: "glenalmond-christmas-2026",
+        programme: "Christmas Holiday Camp",
+        window: "winter-2026",
+        startDate: "2026-12-14",
+        endDate: "2026-12-18",
+        dateStatus: "confirmed",
+        categories: ["multi-activity", "language-learning", "sport-and-fitness"],
+        minAge: 5,
+        maxAge: 11,
+        format: "day",
+        priceFrom: 13000,
+        priceUnit: "per-week",
+        lastVerified: "2026-11-10",
+      },
+    ],
+  },
+  {
     slug: "qsi-summer-fun-camp",
     name: "QSI Summer Fun Camp",
     area: "Kathu",

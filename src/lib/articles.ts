@@ -175,10 +175,11 @@ export const ARTICLES: Article[] = [
     title: "Christmas Holiday Camps in Phuket 2026: Dates, Ages and Prices",
     category: "Camps",
     date: "2026-11-04",
+    updated: "2026-11-10",
     excerpt:
       "Every Christmas holiday camp in Phuket we can confirm for December 2026, from nature camps in Cherngtalay to swim and tennis at Thanyapura, plus what BISP ran last year and Christmas workshops for little ones.",
     metaDescription:
-      "Christmas holiday camps in Phuket for December 2026: confirmed dates, ages, hours and weekly prices for Bamboo Valley, Thanyapura and ISP, plus BISP's camps and festive workshops for kids.",
+      "Christmas holiday camps in Phuket for December 2026: confirmed dates, ages, hours and weekly prices for Bamboo Valley, Thanyapura, ISP and Glenalmond, plus BISP's camps and festive workshops for kids.",
     keywords: [
       "christmas camp phuket",
       "phuket holiday camp december 2026",
@@ -190,22 +191,23 @@ export const ARTICLES: Article[] = [
     ],
     headings: [
       { beforeParagraph: 1, text: "Camps with confirmed dates" },
-      { beforeParagraph: 4, text: "BISP: what ran last Christmas" },
-      { beforeParagraph: 6, text: "Christmas workshops and events for little ones" },
-      { beforeParagraph: 8, text: "Visiting in January to March?" },
-      { beforeParagraph: 9, text: "Before you book" },
+      { beforeParagraph: 5, text: "BISP: what ran last Christmas" },
+      { beforeParagraph: 7, text: "Christmas workshops and events for little ones" },
+      { beforeParagraph: 9, text: "Visiting in January to March?" },
+      { beforeParagraph: 10, text: "Before you book" },
     ],
     body: [
       "Phuket's international schools break up in mid-December and most go back in early January, which leaves working parents, and families visiting the island, looking for a few weeks of camp. This guide covers every Christmas camp we can confirm for 2026, the camps that ran last December and are likely to return, and a few festive one-offs for younger children. Every camp here also has a listing in our [Phuket holiday camps directory](/camps), where you can filter by age and dates.",
       "**[Bamboo Valley's Christmas Nature Camp](/camps/bamboo-valley-nature-camps)** in Cherngtalay runs for two weeks, from **14 to 25 December**, Monday to Friday from 9am to 3pm, with lunch included. The Mini camp for ages 3 to 6 costs **13,000 baht a week** and the Explorer camp for ages 6 to 13 costs **15,000 baht a week**, with two outings a week and transport for the Explorers. Days are spent outdoors with animal care, gardening, baking, crafts and games, and every camper needs health or travel medical insurance that covers the camp.",
       "**[Thanyapura's Future Stars camp](/camps/thanyapura-future-stars-camp)** in Thalang runs the longest, from **21 December to 8 January**, which suits families whose school starts back later. It is for ages 5 to 16. The full-day swim and tennis camp runs from 9am to 4pm for **13,000 baht a week** or 3,200 baht a day, and a half-day swim camp runs from 9am to 1.30pm for **7,400 baht a week** or 2,300 baht a day, both with lunch.",
       "**[ISP's Christmas Camp](/camps/isp-holiday-camps)** in Rawai runs from **14 to 24 December** for ages 6 to 12, from 8.45am to 3.45pm, and is open to children from other schools as well as ISP's own. ISP has not published the Christmas price, so ask when you book.",
+      "**[Glenalmond Phuket's Christmas Holiday Camp](/camps/glenalmond-phuket-christmas-camp)** runs from **14 to 18 December** for ages 5 to 11 at the school's campus inside Thanyapura in Thalang, for **13,000 baht for the week**. It combines English activities, creative projects, football, swimming and tennis, and finishes with a Christmas celebration. The brochure does not give daily hours or say whether lunch is included, so ask when you book.",
       "Last December, **[BISP](/camps/summer-at-bisp)** in Koh Kaew hosted the biggest line-up on the island, open to children from other schools. It included a Cruzeiro football camp on 13 and 14 December for Years 3 to 6, a Christmas tennis camp from 13 to 16 December for ages 4 to 17, three weeks of swim camps between 15 December and 2 January, a Play Sports multi-sport camp from 13 to 16 December for ages 4 to 11, and three rounds of circus courses with [Mid-Air Circus Arts](/activities/mid-air-circus-arts) between 15 and 31 December.",
       "BISP has not announced its 2026 Christmas camps yet, but Play Sports' own page already lists its Christmas camp at BISP for **12 to 16 December**. Last year TEEMS Global also ran a winter camp at BISP from 15 to 21 December with a residential option, one of the very few boarding camps on the island at Christmas. We will add the 2026 dates to the [camps directory](/camps) as soon as they are published.",
       "For children too young for a full camp, Bamboo Valley runs **Saturday Christmas workshops** on 28 November, 12 December and 19 December for ages 3 to 8, with candle making, paper lanterns, decorating a Christmas tree and baking bread and carrot cake. A morning (10am to 12pm) or afternoon (1pm to 3pm) session costs **1,200 baht**, or **2,400 baht** for the whole day with lunch.",
       "At Cape Panwa, the **Pullman Phuket Panwa** resort holds a free Christmas tree lighting on 4 December from 6pm to 8pm and a Christmas market from 4 to 6 December. Its **Santa's Workshop** on 13 and 20 December, from 2pm to 4pm, costs 2,100 baht for a family of two adults and two children, plus 600 baht for each extra child aged 6 to 12.",
       "Phuket's high season brings a second wave of camps for families visiting from abroad. Bamboo Valley's Winter Nature Camp runs weekly from **18 January to 5 March 2027**, at 13,500 baht a week for the Mini camp and 15,500 baht for the Explorers. PGIS in Chalong ran an English immersion winter camp from late January to February 2026 for ages 5 to 12 at 12,000 to 13,000 baht a week, and it is likely to return. Both are in the [camps directory](/camps) under January to March.",
-      "Book the weeks you need early, because the smaller camps fill up with holidaymakers over Christmas. Check what is included: lunch is included at all three confirmed camps, but transport to and from camp usually is not, and Phuket's traffic makes the location matter. Thanyapura is in the north near the airport, Bamboo Valley on the west coast near Bang Tao and ISP in Rawai in the far south. If you only need a few days, Thanyapura sells single days.",
+      "Book the weeks you need early, because the smaller camps fill up with holidaymakers over Christmas. Check what is included: lunch is included at Bamboo Valley, Thanyapura and ISP (Glenalmond has not said), but transport to and from camp usually is not, and Phuket's traffic makes the location matter. Thanyapura and Glenalmond share a resort in the north near the airport, Bamboo Valley on the west coast near Bang Tao and ISP in Rawai in the far south. If you only need a few days, Thanyapura sells single days.",
       "Spending part of the holiday in Bangkok? Our sister site BKK Families has the same kind of [holiday camps directory for Bangkok](https://www.bkkfamilies.com/camps) and a guide to [Christmas in Bangkok with kids](https://www.bkkfamilies.com/blog/christmas-in-bangkok-with-kids), with family Christmas dinners, markets and where to find Santa.",
     ],
     faq: [
