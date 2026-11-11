@@ -4,6 +4,8 @@
 // 53 of 55 old /schools/ URLs match current slugs and are handled by Next's
 // trailing-slash normalisation, so they are deliberately absent here.
 const legacyRedirects = [
+  // Bangtao Muay Thai has no children's classes yet (gym, 9 Nov 2026)
+  { source: "/activities/bangtao-muay-thai-kids-bjj", destination: "/activities" },
   // Already live before this map
   { source: "/blog/health-insurance-expat-families-bangkok", destination: "/healthcare/insurance" },
   { source: "/fitness-health", destination: "/blog/staying-fit-in-bangkok" },
