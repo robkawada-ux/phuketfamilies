@@ -68,6 +68,12 @@ export default function SchoolsPage() {
           </Link>
           .
         </p>
+        <p className="mt-3 text-center text-sm text-neutral-600">
+          Considering other cities? See{" "}
+          <a href="https://www.bkkfamilies.com/schools" className="font-semibold text-orange">international schools in Bangkok</a>{" "}
+          and{" "}
+          <a href="https://www.chiangmaifamilies.com/schools" className="font-semibold text-orange">international schools in Chiang Mai</a>.
+        </p>
       </div>
     </>
   );

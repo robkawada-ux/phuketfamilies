@@ -61,7 +61,11 @@ export default function Footer() {
           <a href={SISTER_SITE.url} className="font-semibold text-teal hover:text-white">
             {SISTER_SITE.name}
           </a>
-          , schools, healthcare, camps and family life in {SISTER_SITE.city}.
+          , schools, healthcare, camps and family life in {SISTER_SITE.city}, and{" "}
+          <a href="https://www.chiangmaifamilies.com" className="font-semibold text-teal hover:text-white">
+            Chiang Mai Families
+          </a>{" "}
+          for families in northern Thailand.
         </div>
         <div className="mt-6 border-t border-white/10 pt-6 text-xs text-white/50">
           © {new Date().getFullYear()} Phuket Families. All rights reserved.
