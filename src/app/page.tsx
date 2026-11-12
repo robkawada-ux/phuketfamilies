@@ -43,6 +43,7 @@ const jsonLd = [
     logo: `${SITE}/apple-icon.png`,
     description: DESCRIPTION,
     areaServed: { "@type": "Place", name: "Phuket, Thailand" },
+    parentOrganization: { "@id": "https://www.bkkfamilies.com/#organization", "@type": "Organization", name: "BKK Families", url: "https://www.bkkfamilies.com" },
   },
 ];
 
