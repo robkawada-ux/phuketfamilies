@@ -7,7 +7,7 @@ import { CAMPS, ALL_SESSIONS } from "@/lib/camps";
 import { todayInBangkok } from "@/lib/featured";
 
 // Regenerated hourly so paid featured placements switch on and off by date.
-export const revalidate = 3600;
+export const revalidate = 86400; // daily: camp weeks drop off by date, so once a day is enough (CPU cost)
 
 const TITLE = "Holiday Camps in Phuket 2026/27";
 const DESCRIPTION =

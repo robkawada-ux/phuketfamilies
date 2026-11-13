@@ -9,7 +9,7 @@ import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
 import { StatRoads, Roundabout } from "@/components/ui/Road";
 
 // Re-render hourly so booked banners start and end on their dates.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 const TITLE = "Phuket Families: International Schools and Family Life in Phuket";
 const DESCRIPTION =

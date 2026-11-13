@@ -14,7 +14,7 @@ import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
 import { isFeaturedNow } from "@/lib/featured";
 
 // Regenerated hourly so paid featured placements switch on and off by date.
-export const revalidate = 3600;
+export const revalidate = 86400; // daily: camp weeks drop off by date, so once a day is enough (CPU cost)
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",

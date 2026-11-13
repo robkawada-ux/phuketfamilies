@@ -8,7 +8,7 @@ import { SITE } from "@/lib/seo";
 import { todayInBangkok } from "@/lib/featured";
 
 // Regenerated hourly so paid featured placements switch on and off by date.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 export const metadata: Metadata = {
   alternates: { canonical: "/schools" },

@@ -26,7 +26,7 @@ import {
 import { isFeaturedNow } from "@/lib/featured";
 
 // Regenerated hourly so paid featured placements switch on and off by date.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 export function generateStaticParams() {
   return SCHOOLS.map((s) => ({ slug: s.slug }));
